@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/constants/app_assets.dart';
-import 'package:hashtag/core/constants/place_holders.dart';
-import 'package:hashtag/core/styles/colors.dart';
 import 'package:hashtag/core/theme/widget/PrimaryColorSwitcher.dart';
 import 'package:hashtag/core/theme/widget/ThemeSwitcher.dart';
-import 'package:hashtag/core/widgets/custom_text_widget.dart';
 import 'package:hashtag/features/splash/presentation/get/splash_controller.dart';
+import 'package:hashtag/gen/assets.gen.dart';
 
-import '../../../../core/constants/app_strings.dart';
-import '../../../../core/widgets/animated_widget.dart';
-import '../../builder_ids.dart';
+import '../../../../core/utils/custom_logs.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -19,44 +14,39 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-
-
-class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
-
-  late AnimationController scaleController;
-  late Animation<double> scaleAnimation;
- double _containerWidth = 450.0;
+class _SplashScreenState extends State<SplashScreen> {
+  double _containerWidth = 450.0;
 
   @override
   void initState() {
     super.initState();
-    SplashScreenController controller = Get.find();
-    scaleController =
-    AnimationController(vsync: this, duration: const Duration(milliseconds: 500))
-      ..addStatusListener(
-            (status) {
-          if (status == AnimationStatus.completed) {
-         //   Get.off(LoginScreen());
-          }
-        },
-      );
-
-    scaleAnimation =
-        Tween<double>(begin: 0.0, end: Get.height).animate(scaleController);
-
-    controller.startAnimation(scaleController);
   }
 
-
   @override
-  void dispose() {
-    scaleController.dispose();
-    super.dispose();
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<SplashScreenController>(
+        init: SplashScreenController(splashRepo: Get.find(),secureStorageService: Get.find()),
+        builder: (controller) {
+          return Scaffold(
+            body: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    height: 200,
+                    width: 200,
+                    Assets.images.hastag.path, // Make sure the path is correct
+                    fit: BoxFit.cover, // Adjust to fit the image as needed
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
   }
 
-
-  @override
- Widget build(BuildContext context) {
+  getSetting() {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Theme & Primary Color Switcher'),
@@ -85,6 +75,4 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       ),
     );
   }
- 
- 
- }
+}

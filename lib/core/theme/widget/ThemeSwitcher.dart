@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hashtag/core/theme/ThemeProvider.dart';
-import 'package:hashtag/core/theme/apptheme.dart';
+import 'package:hashtag/core/theme/theme_provider.dart';
+import 'package:hashtag/core/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
 const double _containerWidth = 450.0;

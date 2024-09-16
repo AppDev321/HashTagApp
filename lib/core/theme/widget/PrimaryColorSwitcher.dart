@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hashtag/core/theme/ThemeProvider.dart';
+import 'package:hashtag/core/theme/theme_provider.dart';
 import 'package:hashtag/core/theme/app_theme_colors.dart';
 import 'package:provider/provider.dart';
 
@@ -14,23 +14,23 @@ class PrimaryColorSwitcher extends StatelessWidget {
       builder: (c, themeProvider, _) => SizedBox(
         height: (_containerWidth - (17 * 2) - (10 * 2)) / 3,
         child: GridView.count(
-          crossAxisCount: AppColors.primaryColors.length,
+          crossAxisCount: AppThemeColors.primaryColors.length,
           physics: const NeverScrollableScrollPhysics(),
           crossAxisSpacing: 10,
           children: List.generate(
-            AppColors.primaryColors.length,
+            AppThemeColors.primaryColors.length,
             (i) {
-              bool isSelectedColor = AppColors.primaryColors[i] ==
+              bool isSelectedColor = AppThemeColors.primaryColors[i] ==
                   themeProvider.selectedPrimaryColor;
               return GestureDetector(
                 onTap: isSelectedColor
                     ? null
                     : () => themeProvider
-                        .setSelectedPrimaryColor(AppColors.primaryColors[i]),
+                        .setSelectedPrimaryColor(AppThemeColors.primaryColors[i]),
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
-                    color: AppColors.primaryColors[i],
+                    color: AppThemeColors.primaryColors[i],
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: AnimatedOpacity(

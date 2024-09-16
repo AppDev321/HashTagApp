@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
-
-
 class HashTagAppTheme {
   ThemeMode mode;
   String title;
   IconData icon;
-  HashTagAppTheme(
-      {required this.mode, required this.title, required this.icon});
-}
 
+  HashTagAppTheme({required this.mode, required this.title, required this.icon});
+}
 
 List<HashTagAppTheme> appThemes = [
   HashTagAppTheme(

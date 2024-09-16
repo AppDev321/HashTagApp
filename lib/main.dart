@@ -1,24 +1,24 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/styles/color_schemes.dart';
 import 'package:hashtag/core/styles/text_theme.dart';
-import 'package:hashtag/core/theme/ThemeProvider.dart';
 import 'package:hashtag/core/theme/app_theme_colors.dart';
+import 'package:hashtag/core/theme/theme_provider.dart';
+import 'package:hashtag/core/utils/custom_logs.dart';
 import 'package:hashtag/features/splash/presentation/widget/splash_screen.dart';
 import 'package:hashtag/init_core.dart';
 import 'package:hashtag/init_main.dart';
+import 'package:hashtag/routes/app_pages.dart';
 import 'package:provider/provider.dart';
-
-
-
- 
+import 'core/utils/secure_storage.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   FlutterNativeSplash.remove();
+  await Get.putAsync(() async => SharedPreferencesService().init());
+
+
   initCore();
   initMain();
   runApp(const MyApp());
@@ -27,40 +27,38 @@ void main() async {
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 
-
 class MyApp extends StatelessWidget {
-    const MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    print('Rebuilt App!');
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => ThemeProvider(),
-        ),
-      ],
-      child: Consumer<ThemeProvider>(
-        child: const SplashScreen(),
-        builder: (c, themeProvider, child) {
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => ThemeProvider(),
+          ),
+        ],
+        child: Consumer<ThemeProvider>(builder: (c, themeProvider, child) {
           return GetMaterialApp(
-                navigatorKey: Get.key,
+            navigatorKey: Get.key,
             debugShowCheckedModeBanner: false,
             themeMode: themeProvider.selectedThemeMode,
+            initialRoute: AppPages.SPLASH,
+            getPages: AppPages.routes,
             theme: ThemeData(
               brightness: Brightness.light,
-              primarySwatch: AppColors.getMaterialColorFromColor(themeProvider.selectedPrimaryColor),
+              primarySwatch: AppThemeColors.getMaterialColorFromColor(themeProvider.selectedPrimaryColor),
               primaryColor: themeProvider.selectedPrimaryColor,
+              textTheme: lightTextTheme,
             ),
             darkTheme: ThemeData(
               brightness: Brightness.dark,
-              primarySwatch: AppColors.getMaterialColorFromColor(themeProvider.selectedPrimaryColor),
+              primarySwatch: AppThemeColors.getMaterialColorFromColor(themeProvider.selectedPrimaryColor),
               primaryColor: themeProvider.selectedPrimaryColor,
+              textTheme: darkTextTheme,
             ),
             home: child,
           );
-        },
-      ),
-    );
+        }));
   }
 }

@@ -15,28 +15,21 @@ class OnboardingContents {
 }
 List<OnboardingContents> contents = [
   OnboardingContents(
-    title: "Welcome to Freshly!",
+    title: "Welcome to HashTag Generator!",
     image: AppAssets.boarding1,
-    desc: "Experience hassle-free laundry services right at your fingertips. Let Freshly take care of your laundry needs efficiently",
+    desc: "Quickly find the best hashtags for your posts to boost engagement and reach. Simply input your content, and get tailored recommendations in seconds.",
     buttonLabel: "Next"
   ),
   OnboardingContents(
-      title: "Showcase your expertise",
+      title: "Customizable Hashtag Suggestions",
       image: AppAssets.boarding2,
-      desc: "Highlight your laundry expertise. Display your services and attract customers with your unique offerings.",
+      desc: "Organize and save your favorite hashtags into custom groups for easy access. Effortlessly apply these groups to different types of content and campaigns.",
       buttonLabel: "Next"
   ),
   OnboardingContents(
-      title: "Receive request in real-time",
+      title: "Analytics and Insights",
       image: AppAssets.boarding3,
-      desc: "Get notified instantly with real-time service requests. Seamlessly manage incoming laundry orders to optimize your workflow.",
+      desc: "Monitor the effectiveness of your hashtags with real-time analytics. Track which hashtags drive the most engagement and adjust your strategy for optimal results.",
       buttonLabel: "Next"
-  ),
-
-  OnboardingContents(
-      title: "Let’s Grow Together",
-      image: AppAssets.boarding4,
-      desc: "Ready to elevate your laundry business? Let's grow together with Freshly! Your success, our commitment.",
-      buttonLabel: "Next"
-  ),
+  )
 ];

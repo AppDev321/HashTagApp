@@ -1,53 +1,33 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/utils/app_config_service.dart';
-import 'package:hashtag/features/splash/builder_ids.dart';
+import 'package:hashtag/core/utils/custom_logs.dart';
+import 'package:hashtag/core/utils/secure_storage.dart';
 import 'package:hashtag/features/splash/data/repositories/splash_repo.dart';
-
-import '../../../../core/error/errors.dart';
-import '../../../../core/popups/show_popups.dart';
 
 class SplashScreenController extends GetxController {
   final SplashRepo splashRepo;
+  final SecureStorageService secureStorageService;
 
-  SplashScreenController({required this.splashRepo});
+  SplashScreenController({required this.splashRepo, required this.secureStorageService});
 
   var isApiLoading = false;
   late AnimationController scaleController;
 
-   startAnimation(AnimationController scaleController) async {
-     this.scaleController = scaleController;
-    await Future.delayed(const Duration(milliseconds: 500));
-
-    await Future.delayed(const Duration(milliseconds: 5000));
-    getApplicationConfiguration();
-  }
-
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-
-  }
-
-  getApplicationConfiguration() async {
-    isApiLoading = true;
-    update([updatedSplash]);
-    await splashRepo.getAppConfigurations().then((value) async {
-      //set data in configuration class
-      ConfigService().setConfigData(value);
-      // Get.off(() => LoginScreen());
-      scaleController.forward();
-    }).onError<CustomError>((error, stackTrace) async {
-
-      // print(error.message);
-      isApiLoading = false;
-      update([updatedSplash]);
-      update();
-      showAppThemedDialog(error);
+  startAnimation() async {
+    await Future.delayed(const Duration(milliseconds: 800));
+    secureStorageService.isAppOpenFirstTime().then((isFirstTime) {
+      if (isFirstTime == null || isFirstTime == true) {
+        CustomLogger.log("FirstTime app");
+        secureStorageService.setAppOpenFirstTime();
+      } else {
+        CustomLogger.log("Not FirstTime app");
+      }
     });
   }
 
-
-
+  @override
+  void onReady() {
+    super.onReady();
+    startAnimation();
+  }
 }

@@ -63,10 +63,10 @@ class AppAssets {
 
 
 
-  static const String boarding1 = "assets/images/boarding1.jpg";
-  static const String boarding2 = "assets/images/boarding2.jpg";
-  static const String boarding3 = "assets/images/boarding3.jpg";
-  static const String boarding4 = "assets/images/boarding4.jpg";
+  static const String boarding1 = "assets/images/image1.png";
+  static const String boarding2 = "assets/images/image2.png";
+  static const String boarding3 = "assets/images/image3.png";
+
   static const String dummyDocument = "assets/images/img_document_dummy.png";
   ///jpg images
   static const String appIcon = "assets/icons/freshly_logo.jpg";

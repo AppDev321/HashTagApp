@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColors {
+class AppThemeColors {
   static List<Color> primaryColors = const [
     Color(0xffd23156),
     Color(0xff16b9fd),
@@ -13,9 +13,7 @@ class AppColors {
     assert(value >= 0 && value <= 1);
 
     final hsl = HSLColor.fromColor(color);
-    final hslDark = hsl.withLightness(
-        (darker ? (hsl.lightness - value) : (hsl.lightness + value))
-            .clamp(0.0, 1.0));
+    final hslDark = hsl.withLightness((darker ? (hsl.lightness - value) : (hsl.lightness + value)).clamp(0.0, 1.0));
 
     return hslDark.toColor();
   }

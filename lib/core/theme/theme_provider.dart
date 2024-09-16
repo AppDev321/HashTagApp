@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hashtag/core/theme/app_theme_colors.dart';
-import 'package:hashtag/core/theme/apptheme.dart';
+import 'package:hashtag/core/theme/app_theme.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeMode selectedThemeMode = appThemes[0].mode;
@@ -10,7 +10,7 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Color selectedPrimaryColor = AppColors.primaryColors[0];
+  Color selectedPrimaryColor = AppThemeColors.primaryColors[0];
 
   setSelectedPrimaryColor(Color color) {
     selectedPrimaryColor = color;

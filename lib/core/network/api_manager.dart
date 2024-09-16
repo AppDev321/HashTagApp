@@ -1,11 +1,12 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hashtag/core/constants/api_messages.dart';
 import 'package:hashtag/core/network/dio_client.dart';
 import 'package:hashtag/core/network/dio_exception.dart';
 import 'package:hashtag/core/network/log_debugger_style.dart';
+import 'package:hashtag/core/utils/secure_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../error/errors.dart';
 import '../services/network_service.dart';
@@ -24,7 +25,7 @@ class ApiResponse {
 
 class ApiManager {
   final DioClient _dio;
-  final FlutterSecureStorage secureStorage;
+  final SecureStorageService secureStorage;
   final NetworkInfo networkInfo;
 
   ApiManager(this._dio, this.secureStorage, this.networkInfo);
