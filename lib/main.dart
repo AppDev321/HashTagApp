@@ -5,11 +5,11 @@ import 'package:hashtag/core/styles/text_theme.dart';
 import 'package:hashtag/core/theme/app_theme_colors.dart';
 import 'package:hashtag/core/theme/theme_provider.dart';
 import 'package:hashtag/core/utils/custom_logs.dart';
-import 'package:hashtag/features/splash/presentation/widget/splash_screen.dart';
 import 'package:hashtag/init_core.dart';
 import 'package:hashtag/init_main.dart';
 import 'package:hashtag/routes/app_pages.dart';
 import 'package:provider/provider.dart';
+
 import 'core/utils/secure_storage.dart';
 
 void main() async {
@@ -17,7 +17,7 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   FlutterNativeSplash.remove();
   await Get.putAsync(() async => SharedPreferencesService().init());
-
+  Get.put(ThemeProvider());
 
   initCore();
   initMain();
@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: Consumer<ThemeProvider>(builder: (c, themeProvider, child) {
+          CustomLogger.log("UI App refresshed",object:this);
           return GetMaterialApp(
             navigatorKey: Get.key,
             debugShowCheckedModeBanner: false,
@@ -62,3 +63,4 @@ class MyApp extends StatelessWidget {
         }));
   }
 }
+

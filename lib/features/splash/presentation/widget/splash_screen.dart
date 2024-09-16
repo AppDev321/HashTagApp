@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/theme/widget/PrimaryColorSwitcher.dart';
-import 'package:hashtag/core/theme/widget/ThemeSwitcher.dart';
 import 'package:hashtag/features/splash/presentation/get/splash_controller.dart';
 import 'package:hashtag/gen/assets.gen.dart';
-
-import '../../../../core/utils/custom_logs.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -46,33 +42,5 @@ class _SplashScreenState extends State<SplashScreen> {
         });
   }
 
-  getSetting() {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Theme & Primary Color Switcher'),
-      ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 17),
-          width: _containerWidth,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text('Theme'),
-              ),
-              ThemeSwitcher(),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text('Primary Color'),
-              ),
-              PrimaryColorSwitcher(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+
 }
