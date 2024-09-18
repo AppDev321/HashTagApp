@@ -71,7 +71,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
         if(isFirstTime) {
           Navigator.pushReplacement(context, PageTransition(const OnBoardingScreen()));
         } else{
-          Navigator.pushReplacement(context, PageTransition( DashboardPage()));
+          Navigator.pushReplacement(context, PageTransition(DashboardPage()));
           //Get.offNamed(AppPages.DASHBOARD,);
         }
       });
@@ -100,7 +100,6 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
                 child: Text(
                   AppStrings.appTitle,
                   style: TextStyle(
-                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: animation1.value,
                   ),

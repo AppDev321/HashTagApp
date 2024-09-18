@@ -1,8 +1,9 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:hashtag/core/styles/colors.dart';
-import 'package:hashtag/core/theme/app_theme_colors.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:hashtag/core/utils/custom_logs.dart';
 import 'package:hashtag/features/settings/settings_page.dart';
+
 import '../../core/constants/app_strings.dart';
 import '../home/home_page.dart';
 import './dashboard_controller.dart';
@@ -13,13 +14,12 @@ class DashboardPage extends GetView<DashboardController> {
   final List<Widget> _pages = [
     HomePage(),
     SearchPage(),
-    SettingsPage(),
+    const SettingsPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
       body: PageView(
         controller: controller.pageController,
         onPageChanged: controller.onPageChanged,
@@ -43,6 +43,7 @@ class DashboardPage extends GetView<DashboardController> {
               elevation: 0,
               currentIndex: controller.currentBottomTabIndex.value,
               onTap: controller.onTabTapped,
+
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.tag),

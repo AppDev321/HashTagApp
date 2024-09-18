@@ -1,22 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:hashtag/core/theme/app_theme_colors.dart';
-import 'package:hashtag/core/theme/app_theme.dart';
+import 'package:get/get.dart';
+import 'package:hashtag/core/utils/secure_storage.dart';
 
-import '../utils/custom_logs.dart';
+class ThemeController extends GetxController {
+  final box = Get.find<SecureStorageService>();
 
-class ThemeProvider with ChangeNotifier {
-  ThemeMode selectedThemeMode = appThemes[0].mode;
+  RxBool isDarkMode = false.obs;
 
-  setSelectedThemeMode(ThemeMode themeMode) {
-    CustomLogger.log("theme cahnges",object:this);
-    selectedThemeMode = themeMode;
-    notifyListeners();
+  @override
+  void onInit() {
+    super.onInit();
+    box.isDarkModeActive().then((mode) {
+      isDarkMode.value = mode ?? false;
+    });
   }
 
-  Color selectedPrimaryColor = AppThemeColors.primaryColors[0];
-
-  setSelectedPrimaryColor(Color color) {
-    selectedPrimaryColor = color;
-    notifyListeners();
+  void toggleTheme() {
+    isDarkMode.value = !isDarkMode.value;
+    box.setAppThemeForDarkMode(isDarkMode.value);
   }
 }

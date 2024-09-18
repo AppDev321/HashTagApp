@@ -5,7 +5,7 @@ class CustomTextWidget extends StatelessWidget {
   final String? text;
   final double size;
   final FontWeight fontWeight;
-  final Color colorText;
+  final Color? colorText;
   // final Function()? onTap;
   final int? maxLines;
   final String? fontFamily;
@@ -22,7 +22,7 @@ class CustomTextWidget extends StatelessWidget {
       this.buttonIcon,
       this.size = 14,
       this.fontWeight = FontWeight.normal,
-      this.colorText = AppColors.themeTextColor,
+      this.colorText ,
       // this.onTap,
       this.isLoading = false,
       this.fontStyle = FontStyle.normal,
