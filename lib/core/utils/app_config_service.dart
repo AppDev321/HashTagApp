@@ -15,6 +15,7 @@ class ConfigService {
   }
 
   AppConfig? get configData => _configData;
+  SocialMediaRecommendation? selectedSocialMedia;
   List<String> socialMediaPlatforms = [
     "Instagram",
     "TikTok",
@@ -78,6 +79,14 @@ class ConfigService {
       ));
     }
     return items;
+  }
+
+  void setSelectSocialMediaType(SocialMediaRecommendation? socialMediaType) {
+    selectedSocialMedia = socialMediaType;
+  }
+
+  SocialMediaRecommendation getSelectSocialMediaType() {
+   return  selectedSocialMedia ?? socialMediaRecommendation[0];
   }
 
 }
