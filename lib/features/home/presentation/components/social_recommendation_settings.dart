@@ -38,7 +38,7 @@ class _SocialMediaListState extends State<SocialMediaList> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomTextWidget(text:items[index].platform,size: 16,fontWeight: FontWeight.w600,),
-                  CustomTextWidget(text:"Allowed: ${items[index].maxHashtagsChar}"),
+                  CustomTextWidget(text:"Allowed: ${items[index].maxHashtagsChar}",fontWeight: FontWeight.w600,),
                   CustomTextWidget(text:items[index].recommendation,size: 12,),
                 ],
               ),
@@ -47,19 +47,22 @@ class _SocialMediaListState extends State<SocialMediaList> {
                 width: 30, // Set the width as needed
                 height: 30, // Set the height as needed
               ),
-              trailing: Checkbox(
-                value: selectedItem == items[index],
-                onChanged: (bool? value) {
+              trailing: Radio<SocialMediaRecommendation>(
+                value: items[index], // Use the index as the value for the radio button
+                groupValue: selectedItem, // This controls which radio button is selected
+                onChanged: (SocialMediaRecommendation? value) {
                   setState(() {
-                    selectedItem = items[index];
+                    selectedItem = value; // Set the selected index
                   });
                 },
               ),
-              tileColor: selectedItem == items[index] ? Colors.blue[100] : null,
+              //tileColor: selectedItem == items[index] ? Colors.blue[100] : null,
               shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
                 side: BorderSide(
                   color: selectedItem == items[index] ? Colors.blue : Colors.transparent,
                   width: 2,
+
                 ),
               ),
             );

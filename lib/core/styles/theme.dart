@@ -9,7 +9,7 @@ OutlineInputBorder inputBorder = OutlineInputBorder(borderSide: BorderSide(width
 OutlineInputBorder errorInputBorder = OutlineInputBorder(borderSide: const BorderSide(width: 1, color: Colors.red), borderRadius: BorderRadius.circular(15.0));
 class AppTheme {
   static const ColorScheme lightColorScheme = ColorScheme.light(
-    primary: Color(0xFFADD8E6), // Light Blue
+    primary:  Colors.blue, // Light Blue
     onPrimary: Colors.black,
     background: Colors.white,
     onBackground: Colors.black,
