@@ -1,12 +1,12 @@
 
 
 class AppUrls {
-  static const applicationURL = 'https://hashtag.maetech.co';
-  static const baseUrl = "$applicationURL/api/";
+  static const applicationURL = 'http://192.168.56.57:2121';
+  static const baseUrl = "$applicationURL/";
   static const socketIOUrl = "";
 
   //App URLS
-  static const configUrl = '${baseUrl}config';
+  static const configUrl = '${baseUrl}configs';
   static const loginUrl = '${baseUrl}login';
   static const forgotPasswordUrl = '${baseUrl}forgot-password';
   static const verifyOTPUrl = '${baseUrl}verify-otp';

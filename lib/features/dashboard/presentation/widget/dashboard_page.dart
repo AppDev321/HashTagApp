@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/utils/custom_logs.dart';
-import 'package:hashtag/features/settings/settings_page.dart';
 
-import '../../core/constants/app_strings.dart';
-import '../home/home_page.dart';
-import './dashboard_controller.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../home/presentation/widgets/home_page.dart';
+import '../../../settings/presentation/widget/settings_page.dart';
+import '../get/dashboard_controller.dart';
 
 class DashboardPage extends GetView<DashboardController> {
   DashboardPage({Key? key}) : super(key: key);
 
   final List<Widget> _pages = [
     HomePage(),
-    SearchPage(),
+    HomePage(),
     const SettingsPage(),
   ];
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hashtag/features/settings/widget/setting_item_component.dart';
+import 'package:hashtag/features/settings/presentation/components/setting_item_component.dart';
 
-import '../data/data_source/icon_style.dart';
+import '../../data/data_source/icon_style.dart';
 
 class SettingsGroup extends StatelessWidget {
   final String? settingsGroupTitle;

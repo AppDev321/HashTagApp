@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../data/data_source/icon_style.dart';
+import '../../data/data_source/icon_style.dart';
+
 
 class SettingsItem extends StatelessWidget {
   final IconData icons;

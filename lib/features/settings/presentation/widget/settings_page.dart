@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/features/settings/widget/about_component.dart';
-import 'package:hashtag/features/settings/widget/setting_item_component.dart';
-import 'package:hashtag/features/settings/widget/settings_group.dart';
-import 'package:hashtag/features/settings/widget/simple_user_card.dart';
 
-import '../../core/constants/app_strings.dart';
-import '../../gen/assets.gen.dart';
-import './settings_controller.dart';
-import 'data/data_source/icon_style.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../gen/assets.gen.dart';
+import '../../data/data_source/icon_style.dart';
+import '../components/about_component.dart';
+import '../components/setting_item_component.dart';
+import '../components/settings_group.dart';
+import '../components/simple_user_card.dart';
+import '../get/settings_controller.dart';
+
 class SettingsPage extends GetView<SettingsController> {
   const SettingsPage({Key? key}) : super(key: key);
 
@@ -27,7 +28,7 @@ class SettingsPage extends GetView<SettingsController> {
             // User card
             SimpleUserCard(
               userName: "",
-              userProfilePic: AssetImage(Assets.images.hastag.path),
+              userProfilePic: AssetImage(Assets.images.hashtag.path),
             ),
             SettingsGroup(
               items: [

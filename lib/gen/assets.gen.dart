@@ -1020,6 +1020,10 @@ class $AssetsFlagsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/icons/facebook.png');
+
   /// File path: assets/icons/ic_accept_button.svg
   String get icAcceptButton => 'assets/icons/ic_accept_button.svg';
 
@@ -1179,8 +1183,37 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_drawer.svg
   String get iconDrawer => 'assets/icons/icon_drawer.svg';
 
+  /// File path: assets/icons/instagram.png
+  AssetGenImage get instagram =>
+      const AssetGenImage('assets/icons/instagram.png');
+
+  /// File path: assets/icons/linkedin.png
+  AssetGenImage get linkedin =>
+      const AssetGenImage('assets/icons/linkedin.png');
+
+  /// File path: assets/icons/pintrest.png
+  AssetGenImage get pintrest =>
+      const AssetGenImage('assets/icons/pintrest.png');
+
+  /// File path: assets/icons/snapchat.png
+  AssetGenImage get snapchat =>
+      const AssetGenImage('assets/icons/snapchat.png');
+
+  /// File path: assets/icons/threads.png
+  AssetGenImage get threads => const AssetGenImage('assets/icons/threads.png');
+
+  /// File path: assets/icons/tiktok.png
+  AssetGenImage get tiktok => const AssetGenImage('assets/icons/tiktok.png');
+
+  /// File path: assets/icons/twitter.png
+  AssetGenImage get twitter => const AssetGenImage('assets/icons/twitter.png');
+
+  /// File path: assets/icons/youtube.png
+  AssetGenImage get youtube => const AssetGenImage('assets/icons/youtube.png');
+
   /// List of all assets
-  List<String> get values => [
+  List<dynamic> get values => [
+        facebook,
         icAcceptButton,
         icAddress,
         icAge,
@@ -1233,7 +1266,15 @@ class $AssetsIconsGen {
         icVehicle,
         icVolunteerLoc,
         iconArrowbackCircle,
-        iconDrawer
+        iconDrawer,
+        instagram,
+        linkedin,
+        pintrest,
+        snapchat,
+        threads,
+        tiktok,
+        twitter,
+        youtube
       ];
 }
 
@@ -1250,7 +1291,7 @@ class $AssetsImagesGen {
   AssetGenImage get card => const AssetGenImage('assets/images/card.png');
 
   /// File path: assets/images/hashtag.png
-  AssetGenImage get hastag => const AssetGenImage('assets/images/hashtag.png');
+  AssetGenImage get hashtag => const AssetGenImage('assets/images/hashtag.png');
 
   /// File path: assets/images/image1.png
   AssetGenImage get image1 => const AssetGenImage('assets/images/image1.png');
@@ -1285,7 +1326,7 @@ class $AssetsImagesGen {
         login,
         car1,
         card,
-        hastag,
+        hashtag,
         image1,
         image2,
         image3,

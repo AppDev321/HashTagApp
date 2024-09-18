@@ -21,7 +21,7 @@ class SplashDataSourceImpl implements SplashDataSource {
     return await apiManager.makeApiRequest<AppConfig>(
       url: AppUrls.configUrl,
       method: RequestMethod.GET,
-      data:jsonMap,
+      data: jsonMap,
       fromJson: (json) => AppConfig.fromJson(json['data']),
     );
   }

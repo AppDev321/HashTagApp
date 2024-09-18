@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/features/dashboard/dashboard_page.dart';
+import 'package:hashtag/features/dashboard/presentation/widget/dashboard_page.dart';
 import 'package:hashtag/features/onboarding/presentation/pages/onboarding_screen.dart';
 import 'package:hashtag/gen/assets.gen.dart';
 import 'package:hashtag/routes/app_pages.dart';
@@ -11,8 +11,9 @@ import 'package:hashtag/routes/app_pages.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/custom_logs.dart';
 import '../../../../core/utils/secure_storage.dart';
-import '../../../dashboard/dashboard_controller.dart';
-import '../../../home/home_page.dart';
+import '../../../dashboard/presentation/get/dashboard_controller.dart';
+import '../../../home/presentation/widgets/home_page.dart';
+import '../get/splash_controller.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -34,16 +35,17 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   bool isFirstTime = false;
 
   @override
-  void initState()  {
+  void initState() {
     super.initState();
-     secureStorageService.isAppOpenFirstTime().then((fistTime){
-    if (fistTime == null || fistTime == true) {
-      secureStorageService.setAppOpenFirstTime();
-      isFirstTime = true;
-    } else {
-      isFirstTime = false;
-      CustomLogger.log("Not FirstTime app");
-    }});
+    secureStorageService.isAppOpenFirstTime().then((fistTime) {
+      if (fistTime == null || fistTime == true) {
+        secureStorageService.setAppOpenFirstTime();
+        isFirstTime = true;
+      } else {
+        isFirstTime = false;
+        CustomLogger.log("Not FirstTime app");
+      }
+    });
 
     _controller = AnimationController(vsync: this, duration: const Duration(seconds: 8));
     animation1 = Tween<double>(begin: 35, end: 20).animate(CurvedAnimation(parent: _controller, curve: Curves.fastLinearToSlowEaseIn))
@@ -68,9 +70,9 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
 
     Timer(const Duration(seconds: 8), () {
       setState(() {
-        if(isFirstTime) {
+        if (isFirstTime) {
           Navigator.pushReplacement(context, PageTransition(const OnBoardingScreen()));
-        } else{
+        } else {
           Navigator.pushReplacement(context, PageTransition(DashboardPage()));
           //Get.offNamed(AppPages.DASHBOARD,);
         }
@@ -88,46 +90,50 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              AnimatedContainer(duration: const Duration(seconds: 8), curve: Curves.fastLinearToSlowEaseIn, height: height / _fontSize),
-              AnimatedOpacity(
-                duration: const Duration(seconds: 2),
-                opacity: _textOpacity,
-                child: Text(
-                  AppStrings.appTitle,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: animation1.value,
+    return GetBuilder<SplashScreenController>(
+        init: SplashScreenController(splashRepo: Get.find(), secureStorageService: Get.find()),
+        builder: (logic) {
+          return Scaffold(
+            body: Stack(
+              children: [
+                Column(
+                  children: [
+                    AnimatedContainer(duration: const Duration(seconds: 8), curve: Curves.fastLinearToSlowEaseIn, height: height / _fontSize),
+                    AnimatedOpacity(
+                      duration: const Duration(seconds: 2),
+                      opacity: _textOpacity,
+                      child: Text(
+                        AppStrings.appTitle,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: animation1.value,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Center(
+                  child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 2000),
+                    curve: Curves.fastLinearToSlowEaseIn,
+                    opacity: _containerOpacity,
+                    child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 2000),
+                        curve: Curves.fastLinearToSlowEaseIn,
+                        height: width / _containerSize,
+                        width: width / _containerSize,
+                        alignment: Alignment.center,
+                        // decoration: BoxDecoration(
+                        //   color: Colors.white,
+                        //   borderRadius: BorderRadius.circular(30),
+                        // ),
+                        child: Image.asset(Assets.images.hashtag.path)),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Center(
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 2000),
-              curve: Curves.fastLinearToSlowEaseIn,
-              opacity: _containerOpacity,
-              child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 2000),
-                  curve: Curves.fastLinearToSlowEaseIn,
-                  height: width / _containerSize,
-                  width: width / _containerSize,
-                  alignment: Alignment.center,
-                  // decoration: BoxDecoration(
-                  //   color: Colors.white,
-                  //   borderRadius: BorderRadius.circular(30),
-                  // ),
-                  child: Image.asset(Assets.images.hastag.path)),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 }
 
@@ -154,4 +160,3 @@ class PageTransition extends PageRouteBuilder {
           },
         );
 }
-

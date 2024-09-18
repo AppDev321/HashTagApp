@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hashtag/gen/fonts.gen.dart';
 
 import 'colors.dart';
 
@@ -23,7 +24,7 @@ class AppTheme {
 
   static final ThemeData light = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppins,
     colorScheme: lightColorScheme,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.grey[200],
@@ -34,7 +35,7 @@ class AppTheme {
 
   static final ThemeData dark = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppins,
     colorScheme: darkColorScheme,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.grey[850],

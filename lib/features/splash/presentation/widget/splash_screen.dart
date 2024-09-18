@@ -11,7 +11,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  double _containerWidth = 450.0;
 
   @override
   void initState() {
@@ -32,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Image.asset(
                     height: 200,
                     width: 200,
-                    Assets.images.hastag.path, // Make sure the path is correct
+                    Assets.images.hashtag.path, // Make sure the path is correct
                     fit: BoxFit.cover, // Adjust to fit the image as needed
                   ),
                 ),

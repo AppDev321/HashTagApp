@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:hashtag/core/theme/theme_provider.dart';
 import 'package:hashtag/init_core.dart';
 import 'package:hashtag/init_main.dart';
+import 'package:hashtag/routes/app_pages.dart';
 
 import 'core/styles/theme.dart';
 import 'core/utils/custom_logs.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
             navigatorKey: Get.key,
             debugShowCheckedModeBanner: false,
             themeMode: themeController.isDarkMode.value ? ThemeMode.dark : ThemeMode.light,
-            home: const Splash(),
+            initialRoute: AppPages.SPLASH,
+            getPages: AppPages.routes,
             builder: (context, child) {
               return AnimatedTheme(
                 data: themeController.isDarkMode.value ? AppTheme.dark : AppTheme.light,
