@@ -65,7 +65,7 @@ class SettingsItem extends StatelessWidget {
         subtitle: (subtitle != null)
             ? Text(
                 subtitle!,
-                style: subtitleStyle ?? Theme.of(context).textTheme.bodyMedium!,
+                style: subtitleStyle ?? Theme.of(context).textTheme.bodySmall!,
                 maxLines: subtitleMaxLine,
                 overflow: subtitleMaxLine != null ? TextOverflow.ellipsis : null,
               )

@@ -1,0 +1,340 @@
+{
+    "version": "1",
+    "suffixPrefixIgnoredChars": "\u000a\u000d ",
+    "fonts": [
+        {
+            "id": "MATHEMATICAL FRAKTUR + BLACK-LETTER",
+            "fontName": "Fraktur",
+            "sortName": "100",
+            "fontLower": "𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷",
+            "fontUpper": "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ"
+        },
+        {
+            "id": "MATHEMATICAL BOLD FRAKTUR",
+            "fontName": "Bold Fraktur",
+            "sortName": "110",
+            "fontLower": "𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟",
+            "fontUpper": "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅"
+        },
+        {
+            "id": "CIRCLED LATIN",
+            "fontName": "Circled",
+            "sortName": "040",
+            "fontLower": "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ",
+            "fontUpper": "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ",
+            "fontDigits": "⓪①②③④⑤⑥⑦⑧⑨"
+        },
+        {
+            "id": "NEGATIVE CIRCLED LATIN",
+            "fontName": "Full Circled",
+            "sortName": "050",
+            "fontLower": "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩",
+            "fontUpper": "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩",
+            "fontDigits": "⓿➊➋➌➍➎➏➐➑➒"
+        },
+        {
+            "id": "instafonts-asian-style-1",
+            "fontName": "Asian",
+            "sortName": "010",
+            "fontLower": "卂乃匚ᗪ乇千Ꮆ卄丨ﾌҜㄥ爪几ㄖ卩Ɋ尺丂ㄒㄩᐯ山乂ㄚ乙",
+            "fontUpper": "卂乃匚ᗪ乇千Ꮆ卄丨ﾌҜㄥ爪几ㄖ卩Ɋ尺丂ㄒㄩᐯ山乂ㄚ乙"
+        },
+        {
+            "id": "instafonts-squiggle-1",
+            "fontName": "Cool",
+            "sortName": "060",
+            "fontUpper": "ค๖¢໓ēfງhiวkl๓ຖ໐p๑rŞtนงຟxฯຊ",
+            "fontLower": "ค๖¢໓ēfງhiวkl๓ຖ໐p๑rŞtนงຟxฯຊ"
+        },
+        {
+            "id": "SQUARED LATIN",
+            "fontName": "Squared",
+            "sortName": "070",
+            "fontLower": "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉",
+            "fontUpper": "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉"
+        },
+        {
+            "id": "NEGATIVE SQUARED LATIN",
+            "fontName": "Full Squared",
+            "sortName": "080",
+            "fontLower": "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉",
+            "fontUpper": "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉"
+        },
+        {
+            "id": "instafonts-squiggle-2",
+            "fontName": "Rebel",
+            "sortName": "090",
+            "fontUpper": "ąცƈɖɛʄɠɧıʝƙƖɱŋơ℘զཞʂɬų۷ῳҳყʑ",
+            "fontLower": "ąცƈɖɛʄɠɧıʝƙƖɱŋơ℘զཞʂɬų۷ῳҳყʑ"
+        },
+        {
+            "id": "instafonts-squiggle-3",
+            "fontName": "Paradise",
+            "sortName": "020",
+            "fontUpper": "ᏗᏰፈᎴᏋᎦᎶᏂᎥᏠᏦᏝᎷᏁᎧᎮᎤᏒᏕᏖᏬᏉᏇጀᎩፚ",
+            "fontLower": "ᏗᏰፈᎴᏋᎦᎶᏂᎥᏠᏦᏝᎷᏁᎧᎮᎤᏒᏕᏖᏬᏉᏇጀᎩፚ"
+        },
+        {
+            "id": "instafonts-squiggle-4",
+            "fontName": "Superb",
+            "sortName": "030",
+            "fontUpper": "ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ",
+            "fontLower": "ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ"
+        },
+        {
+            "id": "instafonts-squiggle-5",
+            "fontName": "Terrific",
+            "sortName": "120",
+            "fontLower": "αႦƈԃҽϝɠԋιʝƙʅɱɳσρϙɾʂƚυʋɯxყȥ",
+            "fontUpper": "αႦƈԃҽϝɠԋιʝƙʅɱɳσρϙɾʂƚυʋɯxყȥ"
+        },
+        {
+            "id": "MODIFIER + SUPERSCRIPT + MISC Q",
+            "fontName": "Superscript",
+            "sortName": "130",
+            "fontLower": "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ૧ʳˢᵗᵘᵛʷˣʸᶻ",
+            "fontUpper": "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾ૧ᴿˢᵀᵁⱽᵂˣʸᶻ",
+            "fontDigits": "⁰¹²³⁴⁵⁶⁷⁸⁹"
+        },
+        {
+            "id": "FULLWIDTH LATIN",
+            "fontName": "Fullwidth",
+            "sortName": "140",
+            "fontLower": "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ",
+            "fontUpper": "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ",
+            "fontDigits": "０１２３４５６７８９"
+        },
+        {
+            "id": "MATHEMATICAL BOLD",
+            "fontName": "Bold",
+            "sortName": "150",
+            "fontLower": "𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳",
+            "fontUpper": "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙"
+        },
+        {
+            "id": "MATHEMATICAL BOLD ITALIC",
+            "fontName": "Bold Italic",
+            "sortName": "160",
+            "fontLower": "𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛",
+            "fontUpper": "𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁"
+        },
+        {
+            "id": "MATHEMATICAL SANS-SERIF",
+            "fontName": "Light",
+            "sortName": "170",
+            "fontLower": "𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓",
+            "fontUpper": "𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹"
+        },
+        {
+            "id": "MATHEMATICAL SANS-SERIF ITALIC",
+            "fontName": "Serif Italic",
+            "sortName": "180",
+            "fontLower": "𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻",
+            "fontUpper": "𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡"
+        },
+        {
+            "id": "MATHEMATICAL SANS-SERIF BOLD",
+            "fontName": "Serif Bold",
+            "sortName": "190",
+            "fontLower": "𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇",
+            "fontUpper": "𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭",
+            "fontDigits": "𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵"
+        },
+        {
+            "id": "MATHEMATICAL SANS-SERIF BOLD ITALIC",
+            "fontName": "Serif Bold Italic",
+            "sortName": "200",
+            "fontLower": "𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯",
+            "fontUpper": "𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕"
+        },
+        {
+            "id": "MATHEMATICAL MONOSPACE",
+            "fontName": "Monospace",
+            "sortName": "210",
+            "fontLower": "𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣",
+            "fontUpper": "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉"
+        },
+        {
+            "id": "MATHEMATICAL SCRIPT + SCRIPT",
+            "fontName": "Script",
+            "sortName": "220",
+            "fontLower": "𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏",
+            "fontUpper": "𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵"
+        },
+        {
+            "id": "MATHEMATICAL BOLD SCRIPT",
+            "fontName": "Bold Script",
+            "sortName": "230",
+            "fontLower": "𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃",
+            "fontUpper": "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩"
+        },
+        {
+            "id": "PARENTHESIZED LATIN",
+            "fontName": "Parenthesized",
+            "sortName": "240",
+            "fontLower": "⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵",
+            "fontUpper": "⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵",
+            "fontDigits": "⒪⑴⑵⑶⑷⑸⑹⑺⑻⑼"
+        },
+        {
+            "id": "MATHEMATICAL DOUBLE-STRUCK + DOUBLE-STRUCK",
+            "fontName": "Double Struck",
+            "sortName": "250",
+            "fontLower": "𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫",
+            "fontUpper": "𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ"
+        },
+        {
+            "id": "LATIN LETTER SMALL + MISC",
+            "fontName": "Big Short",
+            "sortName": "260",
+            "fontLower": "ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ",
+            "fontUpper": "ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ"
+        },
+        {
+            "id": "instafonts-squiggle-6",
+            "fontName": "Fabulous",
+            "sortName": "270",
+            "fontLower": "ค๒ς๔єŦﻮђเןкɭ๓ภ๏קợгรՇยשฬאץչ",
+            "fontUpper": "ค๒ς๔єŦﻮђเןкɭ๓ภ๏קợгรՇยשฬאץչ"
+        },
+        {
+            "id": "instafonts-symbols-1",
+            "fontName": "Divine",
+            "sortName": "280",
+            "fontLower": "åß¢Ðê£ghïjklmñðþqr§†µvwx¥z",
+            "fontUpper": "ÄßÇÐÈ£GHÌJKLMñÖþQR§†ÚVW×¥Z"
+        },
+        {
+            "id": "instafonts-example-font-1",
+            "fontName": "Smashing",
+            "sortName": "290",
+            "fontLower": "𝑎ᑲርԀ𝓮𝐟𝑔իΐڑ𝘒𝝞𝙢𐒐Ò𝙥𝗊「Ⴝȶป𝞶ຝᕽ𝝪𝝛",
+            "fontUpper": "Ǎ𝛃Ҫ𝑫E𝖥ǤН❘𝐉ķடӎᶰ𝞞🅿ⵕᎡℐ┬𝑼𝝂🆆χᵞ𝛧",
+            "fontDigits": "⊘།²ᶾ④Ƽ𝟲𝟩𝟴੧"
+        },
+        {
+            "id": "instafonts-example-font-2",
+            "fontName": "Heaven",
+            "sortName": "300",
+            "fontLower": "⍺𝑏ʗᕷ𝚎𝕗𝔤ԧῑjКɭ𝒎ᑚ𝑜𝓹٩┎ṢꝈ𝗨𝛎𝘸⧖ⵖⱫ",
+            "fontUpper": "ѧ𝝗ⅽḌȨ𝟊𝘎н।ਹ𝙠Ỻ𝙈Ṇօ𝓟𝑸🝈S⊤𝕌ṿЩ🇽ⵖƶ",
+            "fontDigits": "o|\u14bf\u1d9a\u0427𝟧6\u2077\u09ea\u1343"
+        },
+        {
+            "id": "instafonts-ethiopic",
+            "fontName": "Ethiopic",
+            "sortName": "310",
+            "fontLower": "ልጌርዕቿቻኗዘጎጋጕረጠክዐየዒዪነፕሁሀሠሸሃጊ",
+            "fontUpper": "ልጌርዕቿቻኗዘጎጋጕረጠክዐየዒዪነፕሁሀሠሸሃጊ"
+        },
+        {
+            "id": "instafonts-coptic",
+            "fontName": "Coptic",
+            "sortName": "320",
+            "fontLower": "ⲁⲃⲥⲇⲉ𝓯𝓰ⲏⲓ𝓳ⲕ𝓵ⲙⲛⲟⲣ𝓺ꞅ𝛓ⲧ𐌵𝓿ⲱⲭⲩⲍ",
+            "fontUpper": "ⲀⲂⲤⲆⲈ𝓕𝓖ⲎⲒ𝓙Ⲕ𝓛ⲘⲚⲞⲢ𝓠ꞄϨⲦⴑ𝓥ⲰⲬⲨⲌ"
+        },
+        {
+            "id": "instafonts-neon-1",
+            "fontName": "Neon",
+            "sortName": "320",
+            "fontLower": "ᗩᗷᑕᗪEᖴGᕼIᒍKᒪᗰᑎOᑭᑫᖇᔕTᑌᐯᗯ᙭Yᘔ",
+            "fontUpper": "ᗩᗷᑕᗪEᖴGᕼIᒍKᒪᗰᑎOᑭᑫᖇᔕTᑌᐯᗯ᙭Yᘔ"
+        },
+        {
+            "id": "instafonts-upper-angles",
+            "fontName": "Upper Angles",
+            "sortName": "330",
+            "fontLower": "ΛBᄃDΣFGΉIJKᄂMПӨPQЯƧƬЦVЩXYZ",
+            "fontUpper": "ΛBᄃDΣFGΉIJKᄂMПӨPQЯƧƬЦVЩXYZ"
+        },
+        {
+            "id": "instafonts-bent-text",
+            "fontName": "Bent",
+            "sortName": "340",
+            "fontLower": "ąҍçժҽƒցհìʝҟӀʍղօքզɾʂէմѵա×վՀ",
+            "fontUpper": "Ⱥβ↻ᎠƐƑƓǶįلҠꝈⱮហටφҨའϚͲԱỼచჯӋɀ",
+            "fontDigits": "⊘𝟙ϩӠ५ƼϬ7𝟠९"
+        },
+        {
+            "id": "instafonts-reversed-characters",
+            "fontName": "Reversed",
+            "sortName": "350",
+            "fontLower": "ɒbɔbǝʇϱʜiįʞlmnoppɿƨɈυvwxγz",
+            "fontUpper": "AꓭƆꓷƎꟻӘHIႱꓘ⅃MИOꟼϘЯƧTUVWXYZ",
+            "fontDigits": "0ƖςƸμटმ٢8୧"
+        },
+        {
+            "id": "instafonts-currency",
+            "fontName": "Currency",
+            "sortName": "360",
+            "fontLower": "₳฿₵ĐɆ₣₲ⱧłJ₭Ⱡ₥₦Ø₱QⱤ₴₮ɄV₩ӾɎⱫ",
+            "fontUpper": "₳฿₵ĐɆ₣₲ⱧłJ₭Ⱡ₥₦Ø₱QⱤ₴₮ɄV₩ӾɎⱫ"
+        },
+        {
+            "id": "instafonts-cyrillic-style",
+            "fontName": "Cyrillic",
+            "sortName": "370",
+            "fontLower": "аъсↁэfБЂіјкlмиорqѓѕтцvшхЎz",
+            "fontUpper": "ДБҀↁЄFБНІЈЌLМИФРQЯЅГЦVЩЖЧZ"
+        },
+        {
+            "id": "2048CCG-font-generator-Arabic",
+            "fontName": "Arabic",
+            "sortName": "380",
+            "fontLower": "ค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאz",
+            "fontUpper": "ค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאz"
+        },
+        {
+            "id": "2048CCG-font-generator-Wizard",
+            "fontName": "Wizard",
+            "sortName": "390",
+            "fontLower": "ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ",
+            "fontUpper": "ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ"
+        },
+        {
+            "id": "2048CCG-font-generator-Funky",
+            "fontName": "Funky",
+            "sortName": "400",
+            "fontLower": "αв¢∂єƒgнιנкℓмησρqяѕтυνωχуz",
+            "fontUpper": "αв¢∂єƒgнιנкℓмησρqяѕтυνωχуz"
+        },
+        {
+            "id": "2048CCG-font-generator-Acute",
+            "fontName": "Acute",
+            "sortName": "410",
+            "fontLower": "ábćdéfǵhíjḱĺḿńőṕqŕśtúvẃxӳź",
+            "fontUpper": "ÁBĆDÉFǴHíJḰĹḾŃŐṔQŔśTŰVẂXӲŹ"
+        },
+        {
+            "id": "2048CCG-font-generator-RockDots",
+            "fontName": "Rock Dots",
+            "sortName": "420",
+            "fontLower": "äḅċḋëḟġḧïjḳḷṁṅöṗqṛṡẗüṿẅẍÿż",
+            "fontUpper": "ÄḄĊḊЁḞĠḦЇJḲḶṀṄÖṖQṚṠṪÜṾẄẌŸŻ"
+        },
+        {
+            "id": "2048CCG-font-generator-Stroked",
+            "fontName": "Stroked",
+            "sortName": "430",
+            "fontLower": "Ⱥƀȼđɇfǥħɨɉꝁłmnøᵽꝗɍsŧᵾvwxɏƶ",
+            "fontUpper": "ȺɃȻĐɆFǤĦƗɈꝀŁMNØⱣꝖɌSŦᵾVWXɎƵ"
+        },
+        {
+            "id": "2048CCG-font-generator-Russian",
+            "fontName": "Russian",
+            "sortName": "440",
+            "fontLower": "абcдёfgнїjкгѫпѳpфя$тцѵщжчз",
+            "fontUpper": "АБCДЄFGHЇJКГѪЙѲPФЯ$TЦѴШЖЧЗ"
+        },
+        {
+            "id": "2048CCG-font-generator-Inverted",
+            "fontName": "Inverted",
+            "sortName": "450",
+            "fontLower": "ɐqɔpǝɟƃɥıɾʞןɯuodbɹsʇnʌʍxʎz",
+            "fontUpper": "∀ᗺƆᗡƎℲ⅁HIſꓘ˥WNOԀტᴚS⊥∩ΛMX⅄Z",
+            "fontDigits": "0ƖᘔƐ456ㄥ86"
+        }
+
+    ]
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hashtag/features/misc/presentation/widget/misc_page.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../home/presentation/widgets/home_page.dart';
@@ -11,7 +12,7 @@ class DashboardPage extends GetView<DashboardController> {
 
   final List<Widget> _pages = [
     HomePage(),
-    HomePage(),
+    MiscPage(),
     const SettingsPage(),
   ];
 
@@ -48,8 +49,8 @@ class DashboardPage extends GetView<DashboardController> {
                   label: AppStrings.generate,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.history),
-                  label: AppStrings.history,
+                  icon: Icon(Icons.miscellaneous_services),
+                  label: AppStrings.misc,
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.settings),

@@ -8,9 +8,7 @@ import 'package:hashtag/init_main.dart';
 import 'package:hashtag/routes/app_pages.dart';
 
 import 'core/styles/theme.dart';
-import 'core/utils/custom_logs.dart';
 import 'core/utils/secure_storage.dart';
-import 'features/splash/presentation/widget/splash.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -62,3 +60,4 @@ class MyApp extends StatelessWidget {
     });
   }
 }
+

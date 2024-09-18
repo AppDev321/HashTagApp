@@ -1338,6 +1338,16 @@ class $AssetsImagesGen {
       ];
 }
 
+class $AssetsJsonGen {
+  const $AssetsJsonGen();
+
+  /// File path: assets/json/font_style.json
+  String get fontStyle => 'assets/json/font_style.json';
+
+  /// List of all assets
+  List<String> get values => [fontStyle];
+}
+
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
@@ -1370,6 +1380,7 @@ class Assets {
   static const $AssetsFlagsGen flags = $AssetsFlagsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsJsonGen json = $AssetsJsonGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
   static const $AssetsRawGen raw = $AssetsRawGen();
 }

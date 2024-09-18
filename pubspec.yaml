@@ -1,10 +1,10 @@
 name: hashtag
-description: "Cuzzy Tech HashTag AI"
+description: "CuzzyTech HashTag AI"
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+0
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.2.3 <4.0.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -82,6 +82,7 @@ flutter:
     - assets/raw/
     - assets/flags/
     - assets/lottie/
+    - assets/json/
 
   fonts:
     - family: Poppins

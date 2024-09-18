@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hashtag/gen/fonts.gen.dart';
+import 'package:hashtag/routes/app_pages.dart';
 
 import '../../../../core/styles/dimensions.dart';
 import '../../domain/entities/boarding_content.dart';
@@ -54,7 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: height * 0.75, // Adjust height based on screen size
+                height: height * 0.72, // Adjust height based on screen size
                 child: PageView.builder(
                   physics: const BouncingScrollPhysics(),
                   controller: _controller,
@@ -76,7 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             contents[i].title,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontFamily: "Mulish",
+                              fontFamily: FontFamily.mulish,
                               fontWeight: FontWeight.w600,
                               fontSize: (width <= 550) ? 30 : 35,
                             ),
@@ -85,7 +88,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           Text(
                             contents[i].desc,
                             style: TextStyle(
-                              fontFamily: "Mulish",
+                              fontFamily: FontFamily.mulish,
                               fontWeight: FontWeight.w300,
                               fontSize: (width <= 550) ? 17 : 25,
                             ),
@@ -113,7 +116,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ? Padding(
                             padding: const EdgeInsets.all(30),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.offAndToNamed(Routes.ON_DASHBOARD);
+
+                              },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.black,
                                 shape: RoundedRectangleBorder(
@@ -149,7 +155,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                     "SKIP",
                                     style: TextStyle(
                                       color: Colors.black,
-                                      fontFamily: "Mulish",
+                                      fontFamily: FontFamily.mulish,
                                     ),
                                   ),
                                 ),
@@ -172,7 +178,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   child: const Text("NEXT",
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontFamily: "Mulish",
+                                        fontFamily: FontFamily.mulish,
                                       )),
                                 ),
                               ],

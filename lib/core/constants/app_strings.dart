@@ -20,6 +20,7 @@ class AppStrings {
   static const String resetPasswordScreenLabelMsg = 'Please provide new password in order to update your password';
   static const String newPassword = 'New Password';
   static const String retypePassword = 'Re-type New Password';
+  static const String misc = "Services";
 
   static const String generate = "Generate";
   static const String history = "History";
