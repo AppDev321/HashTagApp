@@ -15,9 +15,12 @@ class CaptionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomTextWidget(text:name,fontWeight: FontWeight.w600,),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomTextWidget(text:name,fontWeight: FontWeight.w600,),
+        ),
         SizedBox(
-          height: Get.height,
+          height: Get.height*0.83,
           child: ListView.builder(
             itemCount: selectedGenre.length,
             itemBuilder: (BuildContext context, int index) {

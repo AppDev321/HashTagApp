@@ -13,21 +13,21 @@ void showBottomSheetDialog(BuildContext context, Widget child, {double padding =
     builder: (BuildContext context) {
       return DraggableScrollableSheet(
         expand: false,
-        initialChildSize: 0.4, // Set initial height to 40% of screen height
-        minChildSize: 0.3, // Minimum height
-        maxChildSize: 0.9, // Maximum height
+        initialChildSize: 0.4,
+        minChildSize: 0.3,
+        maxChildSize: 0.9,
         builder: (context, scrollController) {
           return Container(
             padding: EdgeInsets.all(padding),
-            child: SingleChildScrollView(
-              controller: scrollController,
-              child: GestureDetector(
-                onTap: () {
-                  FocusScope.of(context).unfocus();
-                },
-                child: child, // Your dynamic content here
-                ),
+            child: GestureDetector(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+              },
+              child: SingleChildScrollView(
+                controller: scrollController,
+                child:child,
               ),
+            ),
           );
         },
       );
