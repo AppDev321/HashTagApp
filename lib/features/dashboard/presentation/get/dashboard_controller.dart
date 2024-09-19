@@ -5,6 +5,7 @@ class DashboardController extends GetxController {
   var currentBottomTabIndex = 0.obs;
   final PageController pageController = PageController();
 
+
   void onTabTapped(int index) {
     currentBottomTabIndex.value = index;
     pageController.jumpToPage(index);

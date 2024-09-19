@@ -11,15 +11,12 @@ import 'package:intl/intl.dart';
 import 'package:mime/mime.dart';
 import 'package:hashtag/core/constants/app_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vibration/vibration.dart';
 
 import '../error/errors.dart';
 import '../services/network_service.dart';
 
-
-DateTime get lastBirthDate =>
-    DateTime(2050);
-
-
+DateTime get lastBirthDate => DateTime(2050);
 
 String maskedCardNumber(String last4) => last4.padLeft(12, '*');
 
@@ -41,20 +38,18 @@ String maskedCardNumber(String last4) => last4.padLeft(12, '*');
 String formatCardNumber(String cardNumber) {
   final formatted = cardNumber.replaceAllMapped(
     RegExp(r'^(\d{4})(\d{4})(\d{4})(\d{4})$'),
-        (match) => '${match[1]} ${match[2]} ${match[3]} ${match[4]}',
+    (match) => '${match[1]} ${match[2]} ${match[3]} ${match[4]}',
   );
   return formatted;
 }
 
-final formatCurrency =
-NumberFormat.currency(name: "SGD ", locale: 'en_US', decimalDigits: 2);
+final formatCurrency = NumberFormat.currency(name: "SGD ", locale: 'en_US', decimalDigits: 2);
 
 String priceDisplay(total) {
   return formatCurrency.format(total);
 }
 
-final emailRegExp = RegExp(
-    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+final emailRegExp = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 final trailingZeroRegExp = RegExp(r'([.]*0)(?!.*\d)');
 final spaceRegExp = RegExp('[ ]');
 final oneDecimal = RegExp(r'^\d+\.?\d*');
@@ -74,7 +69,6 @@ String getExtension(Uint8List bytes) {
   final mimeType = lookupMimeType('', headerBytes: bytes);
   return mimeType!.split('/').last;
 }
-
 
 String extractImageName(String url) {
   List<String> parts = url.split('/');
@@ -151,8 +145,6 @@ String convertAppStyleDate(String date) {
   return "$dayWithSuffix $monthYear";
 }
 
-
-
 String getDayWithSuffix(String day) {
   if (day.endsWith('11') || day.endsWith('12') || day.endsWith('13')) {
     return "${day}th";
@@ -169,17 +161,13 @@ String getDayWithSuffix(String day) {
   }
 }
 
-
-
 /// Logs the error return from the repo implementation
-
 
 checkNetwork(NetworkInfo networkInfo) async {
   if (!(await networkInfo.isConnected)) {
     return Future.error(NetworkError());
   }
 }
-
 
 void showSnackBar(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(
@@ -191,8 +179,7 @@ void showSnackBar(BuildContext context, String message) {
   );
 }
 
-showAlertDialog(BuildContext context, String message, String description,
-    Function() callBack) {
+showAlertDialog(BuildContext context, String message, String description, Function() callBack) {
   AlertDialog alert = AlertDialog(
     title: Text(message),
     content: Text(description),
@@ -217,10 +204,6 @@ showAlertDialog(BuildContext context, String message, String description,
   );
 }
 
-
-
-
-
 apiExceptionMapping(int statusCode) {
   // if (statusCode == 500) {
   //   return Future.error(ServerError());
@@ -236,8 +219,7 @@ apiExceptionMapping(int statusCode) {
   }
 }
 
-String multiplierString(int firstValue, double secondValue) =>
-    '$firstValue X $secondValue';
+String multiplierString(int firstValue, double secondValue) => '$firstValue X $secondValue';
 
 String skuString(int? id) => 'SKU: ${id ?? 'Needs Update'}';
 
@@ -253,14 +235,11 @@ String totalPrice(String? symbol, double? price) {
   return '${symbol ?? 'S\$'} ${price ?? 0.0}';
 }
 
-String formatOutgoingTransaction(double amount) =>
-    '-S\$${amount.toStringAsFixed(2)}';
+String formatOutgoingTransaction(double amount) => '-S\$${amount.toStringAsFixed(2)}';
 
-String formatIncomingTransaction(double amount) =>
-    '+S\$${amount.toStringAsFixed(2)}';
+String formatIncomingTransaction(double amount) => '+S\$${amount.toStringAsFixed(2)}';
 
-String formatGeneralBalance(double amount) =>
-    'S\$ ${amount.toStringAsFixed(2)}';
+String formatGeneralBalance(double amount) => 'S\$ ${amount.toStringAsFixed(2)}';
 
 String formatPOName(int value) => 'P${value.toString().padLeft(5, '0')}';
 
@@ -268,15 +247,12 @@ String formatITName(int value) => 'WH/INT/${value.toString().padLeft(5, '0')}';
 
 const int delayForListChange = 300;
 
-const TextInputType quantityKeyBoardType =
-TextInputType.numberWithOptions(signed: true);
+const TextInputType quantityKeyBoardType = TextInputType.numberWithOptions(signed: true);
 
 String getFileWithError(String stackTrace) {
   try {
     String line = stackTrace.trim().split("\n")[0];
-    return line.split(':')[1]
-        .split('/')
-        .last;
+    return line.split(':')[1].split('/').last;
   } catch (e) {
     return "Not located";
   }
@@ -327,12 +303,11 @@ bool shouldShowBackButton(BuildContext context) {
   return true;
 }
 
-
 double convertToDouble(dynamic value) {
   if (value is double) {
     return value;
   } else if (value is String) {
-    return double.parse(value) ;
+    return double.parse(value);
   } else {
     return 0;
   }
@@ -348,7 +323,7 @@ int convertToInt(dynamic value) {
   }
 }
 
-openDialPad(BuildContext context,String phoneNumber) async {
+openDialPad(BuildContext context, String phoneNumber) async {
   Uri url = Uri(scheme: "tel", path: phoneNumber);
   if (await canLaunchUrl(url)) {
     await launchUrl(url);
@@ -357,7 +332,7 @@ openDialPad(BuildContext context,String phoneNumber) async {
   }
 }
 
-openUrl(BuildContext context,String url) async {
+openUrl(BuildContext context, String url) async {
   Uri uri = Uri.parse(url);
   if (await canLaunchUrl(uri)) {
     await launchUrl(uri);
@@ -366,19 +341,32 @@ openUrl(BuildContext context,String url) async {
   }
 }
 
-logoutWidget({VoidCallback?  onTap})
-{
+logoutWidget({VoidCallback? onTap}) {
   return GestureDetector(
-    onTap:onTap,
+    onTap: onTap,
     child: Row(
       children: [
         SvgPicture.asset(AppAssets.icLogout),
-        const SizedBox(width: 5,),
-      //  const CustomTextWidget(text: AppStrings.logout,colorText: AppColors.secondaryTextColor,),
-       // sizeHorizontalFieldSmallPlaceHolder,
+        const SizedBox(
+          width: 5,
+        ),
+        //  const CustomTextWidget(text: AppStrings.logout,colorText: AppColors.secondaryTextColor,),
+        // sizeHorizontalFieldSmallPlaceHolder,
       ],
     ),
   );
+}
+
+void copyToClipboard(BuildContext context, String textToCopy) {
+  Clipboard.setData(ClipboardData(text: textToCopy)).then((_) async {
+    if (await Vibration.hasVibrator() ?? false) {
+      Vibration.vibrate(duration: 100); // Vibrate for 100 milliseconds
+    }
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Copied to clipboard!')),
+    );
+
+  });
 }
 
 class Go {
@@ -387,16 +375,17 @@ class Go {
       page,
       arguments: arguments,
       transition: Transition.fadeIn,
-      curve:Curves.easeInOut,// choose your page transition accordingly
+      curve: Curves.easeInOut, // choose your page transition accordingly
       duration: const Duration(milliseconds: 300),
     );
   }
+
   static Future<dynamic> off(dynamic page, {dynamic arguments}) async {
     Get.off(
       page,
       arguments: arguments,
       transition: Transition.fadeIn,
-      curve:Curves.easeInOut,// choose your page transition accordingly
+      curve: Curves.easeInOut, // choose your page transition accordingly
       duration: const Duration(milliseconds: 300),
     );
   }

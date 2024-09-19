@@ -50,6 +50,10 @@ class AppStrings {
   static const String uploadPic = "Upload Picture";
   static const String download = "Download";
 
+
+
+
+
   // Empty String
   static const String emptyString = '';
 
@@ -100,4 +104,14 @@ class AppStrings {
   static const String genderIsRequired = 'Gender is required';
   static const String phoneNumberIsRequired = 'Phone number is required';
   static const String agreeToTermsIsRequired = 'You have to agree to Terms & Conditions';
+
+
+
+
+  //App used strings
+
+  static const String fontStyleType = "Type a word";
+  static const String fontStyle = "Font Style";
+  static const String captions = "Captions";
+
 }

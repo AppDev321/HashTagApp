@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void showBottomSheetDialog(BuildContext context ,Widget child) {
+void showBottomSheetDialog(BuildContext context, Widget child, {double padding = 20.0}) {
   showModalBottomSheet(
     isScrollControlled: true,
     context: context,
@@ -11,27 +11,25 @@ void showBottomSheetDialog(BuildContext context ,Widget child) {
       ),
     ),
     builder: (BuildContext context) {
-      return Container(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height - AppBar().preferredSize.height - 30,
-        ),
-        child: DraggableScrollableSheet(
-          expand: false,
-          builder: (context, scrollController) {
-            return SingleChildScrollView(
+      return DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.4, // Set initial height to 40% of screen height
+        minChildSize: 0.3, // Minimum height
+        maxChildSize: 0.9, // Maximum height
+        builder: (context, scrollController) {
+          return Container(
+            padding: EdgeInsets.all(padding),
+            child: SingleChildScrollView(
               controller: scrollController,
               child: GestureDetector(
                 onTap: () {
                   FocusScope.of(context).unfocus();
                 },
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: child,
+                child: child, // Your dynamic content here
                 ),
               ),
-            );
-          },
-        ),
+          );
+        },
       );
     },
   );

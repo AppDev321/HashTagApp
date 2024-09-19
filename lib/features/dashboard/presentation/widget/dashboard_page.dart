@@ -11,7 +11,7 @@ class DashboardPage extends GetView<DashboardController> {
   DashboardPage({Key? key}) : super(key: key);
 
   final List<Widget> _pages = [
-    HomePage(),
+    const HomePage(),
     MiscPage(),
     const SettingsPage(),
   ];

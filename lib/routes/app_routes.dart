@@ -7,7 +7,7 @@ abstract class Routes {
   static const ON_DASHBOARD = _Paths.ON_DASHBOARD;
   static const ON_MISC = _Paths.ON_MISC;
   static const ON_FONT_STYLING = _Paths.ON_FONT_STYLING;
-
+  static const ON_CAPTION = _Paths.ON_CAPTION;
 }
 
 abstract class _Paths {
@@ -17,5 +17,5 @@ abstract class _Paths {
   static const ON_DASHBOARD = '/dashboard';
   static const ON_MISC = '/misc';
   static const ON_FONT_STYLING = '/font-style';
-
+  static const ON_CAPTION = '/caption';
 }

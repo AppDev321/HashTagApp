@@ -117,7 +117,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             padding: const EdgeInsets.all(30),
                             child: ElevatedButton(
                               onPressed: () {
-                                Get.offAndToNamed(Routes.ON_DASHBOARD);
+                                Get.offAndToNamed(AppPages.DASHBOARD);
 
                               },
                               style: ElevatedButton.styleFrom(

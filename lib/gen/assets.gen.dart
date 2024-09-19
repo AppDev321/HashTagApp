@@ -1344,8 +1344,11 @@ class $AssetsJsonGen {
   /// File path: assets/json/font_style.json
   String get fontStyle => 'assets/json/font_style.json';
 
+  /// File path: assets/json/quotes.json
+  String get quotes => 'assets/json/quotes.json';
+
   /// List of all assets
-  List<String> get values => [fontStyle];
+  List<String> get values => [fontStyle, quotes];
 }
 
 class $AssetsLottieGen {

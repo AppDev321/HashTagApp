@@ -20,7 +20,7 @@ class CustomTextWidget extends StatelessWidget {
       this.text,
       this.alignment,
       this.buttonIcon,
-      this.size = 14,
+      this.size = 20,
       this.fontWeight = FontWeight.normal,
       this.colorText ,
       // this.onTap,

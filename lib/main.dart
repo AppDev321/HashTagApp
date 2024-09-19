@@ -9,6 +9,7 @@ import 'package:hashtag/routes/app_pages.dart';
 
 import 'core/styles/theme.dart';
 import 'core/utils/secure_storage.dart';
+import 'features/utils/caption_util.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -18,13 +19,16 @@ void main() async {
 
   initCore();
   initMain();
-  runApp(const MyApp());
+
+  runApp( MyApp());
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
+  CaptionUtil captionUtil = Get.find();
+
 
   @override
   Widget build(BuildContext context) {

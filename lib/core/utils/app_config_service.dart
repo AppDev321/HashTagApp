@@ -69,7 +69,6 @@ class ConfigService {
     return _configData?.socialMediaRecommendation ?? [];
   }
 
-
   List<SocialMediaIcons> getSocialMediaIconList() {
     List<SocialMediaIcons> items = [];
     for (int i = 0; i < socialMediaPlatforms.length; i++) {
@@ -85,14 +84,18 @@ class ConfigService {
     selectedSocialMedia = socialMediaType;
   }
 
-  SocialMediaRecommendation getSelectSocialMediaType() {
-   return  selectedSocialMedia ?? socialMediaRecommendation[0];
+  SocialMediaRecommendation? getSelectSocialMediaType() {
+    if (socialMediaRecommendation.isNotEmpty) {
+      return selectedSocialMedia ?? socialMediaRecommendation[0];
+    } else {
+      return null;
+    }
   }
-
 }
 
 class SocialMediaIcons {
   String name;
   String image;
+
   SocialMediaIcons({required this.name, required this.image});
 }
