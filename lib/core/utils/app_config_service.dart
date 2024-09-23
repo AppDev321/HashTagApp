@@ -15,6 +15,44 @@ class ConfigService {
   }
 
   AppConfig? get configData => _configData;
+
+
+  List<SocialMediaIcons> offlineTagsCategories = [
+    SocialMediaIcons(name: 'Popular', alias: "mpth", image: Assets.categories.flame.path),
+    SocialMediaIcons(name: 'Social Media', alias: "SM", image: Assets.categories.socialMedia.path),
+    SocialMediaIcons(name: 'Makeup', alias: "makeup", image: Assets.categories.makeup.path),
+    SocialMediaIcons(name: 'Party', alias: "party", image: Assets.categories.partyPopper.path),
+    SocialMediaIcons(name: 'Gaming', alias: "gaming", image: Assets.categories.console.path),
+    SocialMediaIcons(name: 'Fashion', alias: "fashion", image: Assets.categories.brand.path),
+    SocialMediaIcons(name: 'Baby Mums', alias: "ytparenting", image: Assets.categories.mother.path),
+    SocialMediaIcons(name: 'Food', alias: "food", image: Assets.categories.diet.path),
+    SocialMediaIcons(name: 'Brands', alias: "brands", image: Assets.categories.brand.path),
+    SocialMediaIcons(name: 'Holidays', alias: "holidays", image: Assets.categories.summerHolidays.path),
+    SocialMediaIcons(name: 'Entertainments', alias: "Entertainment", image: Assets.categories.theater.path),
+    SocialMediaIcons(name: 'Photography', alias: "photography", image: Assets.categories.camera.path),
+    SocialMediaIcons(name: 'Feelings', alias: "Feelings", image: Assets.categories.emotional.path),
+    SocialMediaIcons(name: 'Travel', alias: "travel", image: Assets.categories.travel.path),
+    SocialMediaIcons(name: 'Moods', alias: "moods", image: Assets.categories.happy.path),
+    SocialMediaIcons(name: 'Art', alias: "Art", image: Assets.categories.paint.path),
+    SocialMediaIcons(name: 'Hobbies', alias: "tkdiy", image: Assets.categories.puzzle.path),
+    SocialMediaIcons(name: 'Nature', alias: "Nature", image: Assets.categories.leaf.path),
+    SocialMediaIcons(name: 'Week Days', alias: "weeks", image: Assets.categories.days.path),
+    SocialMediaIcons(name: 'Fitness', alias: "ytfitness", image: Assets.categories.fitness.path),
+    SocialMediaIcons(name: 'Animals', alias: "Animals", image: Assets.categories.pawprint.path),
+    SocialMediaIcons(name: 'Music', alias: "ytmusic", image: Assets.categories.music.path),
+    SocialMediaIcons(name: 'Seasonal', alias: "seasonal", image: Assets.categories.tree.path),
+    SocialMediaIcons(name: 'Transport', alias: "Transports", image: Assets.categories.travel.path),
+    SocialMediaIcons(name: 'Transportation', alias: "transportation", image: Assets.categories.deliveryTruck.path),
+    SocialMediaIcons(name: 'People', alias: "People", image: Assets.categories.team.path),
+    SocialMediaIcons(name: 'Work', alias: "work", image: Assets.categories.workingTime.path),
+    SocialMediaIcons(name: 'Weather', alias: "weather", image: Assets.categories.weatherApp.path),
+    SocialMediaIcons(name: 'Sports', alias: "Sports", image: Assets.categories.sports.path),
+    SocialMediaIcons(name: 'Celebration', alias: "Celebration", image: Assets.categories.celebration.path),
+    SocialMediaIcons(name: 'Countries', alias: "Countries", image: Assets.categories.country.path),
+    SocialMediaIcons(name: 'Electronics', alias: "electronics", image: Assets.categories.gadgets.path),
+  ];
+
+
   SocialMediaRecommendation? selectedSocialMedia;
   List<String> socialMediaPlatforms = [
     "Instagram",
@@ -91,11 +129,14 @@ class ConfigService {
       return null;
     }
   }
+
+
 }
 
 class SocialMediaIcons {
   String name;
+  String alias = "";
   String image;
 
-  SocialMediaIcons({required this.name, required this.image});
+  SocialMediaIcons({required this.name, this.alias = "", required this.image});
 }

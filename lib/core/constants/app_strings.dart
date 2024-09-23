@@ -113,5 +113,6 @@ class AppStrings {
   static const String fontStyleType = "Type a word";
   static const String fontStyle = "Font Style";
   static const String captions = "Captions";
+  static const String offline_hashtags = "Offline Tags";
 
 }

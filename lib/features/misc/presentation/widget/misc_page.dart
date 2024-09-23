@@ -50,6 +50,22 @@ class MiscPage extends GetView<MiscController> {
               ),
             ],
           ),
+
+          SettingsGroup(
+            items: [
+              SettingsItem(
+                onTap: () {
+                  Get.toNamed(AppPages.ON_OFFLINE_HASHTAG);
+                },
+                icons: Icons.tag_sharp,
+                iconStyle: IconStyle(
+                  backgroundColor: Colors.green,
+                ),
+                title: AppStrings.offline_hashtags,
+                subtitle: "Utilize thousands of offline tags across various categories.",
+              ),
+            ],
+          ),
         ],
       ),
     );

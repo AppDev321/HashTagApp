@@ -20,6 +20,7 @@ initCore() {
 
   Get.lazyPut<ApiManager>(() => ApiManager(Get.find(), Get.find(), Get.find()), fenix: true);
 
-  Get.lazyPut<DatabaseHelper>(() => DatabaseHelper());
+
+
 
 }

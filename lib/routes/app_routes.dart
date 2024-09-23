@@ -8,6 +8,8 @@ abstract class Routes {
   static const ON_MISC = _Paths.ON_MISC;
   static const ON_FONT_STYLING = _Paths.ON_FONT_STYLING;
   static const ON_CAPTION = _Paths.ON_CAPTION;
+  static const ON_OFFLINE_HASHTAG= _Paths.ON_OFFLINE_HASHTAG;
+  static const ON_OFFLINE_HASHTAG_DETAIL= _Paths.ON_OFFLINE_HASHTAG_DETAIL;
 }
 
 abstract class _Paths {
@@ -18,4 +20,6 @@ abstract class _Paths {
   static const ON_MISC = '/misc';
   static const ON_FONT_STYLING = '/font-style';
   static const ON_CAPTION = '/caption';
+  static const ON_OFFLINE_HASHTAG = '/offline_hash_tag';
+  static const ON_OFFLINE_HASHTAG_DETAIL ="/offline_hash_tag_detail";
 }

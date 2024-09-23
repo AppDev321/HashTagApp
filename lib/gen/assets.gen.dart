@@ -9,6 +9,164 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsCategoriesGen {
+  const $AssetsCategoriesGen();
+
+  /// File path: assets/categories/brand.png
+  AssetGenImage get brand => const AssetGenImage('assets/categories/brand.png');
+
+  /// File path: assets/categories/camera.png
+  AssetGenImage get camera =>
+      const AssetGenImage('assets/categories/camera.png');
+
+  /// File path: assets/categories/celebration.png
+  AssetGenImage get celebration =>
+      const AssetGenImage('assets/categories/celebration.png');
+
+  /// File path: assets/categories/console.png
+  AssetGenImage get console =>
+      const AssetGenImage('assets/categories/console.png');
+
+  /// File path: assets/categories/country.png
+  AssetGenImage get country =>
+      const AssetGenImage('assets/categories/country.png');
+
+  /// File path: assets/categories/days.png
+  AssetGenImage get days => const AssetGenImage('assets/categories/days.png');
+
+  /// File path: assets/categories/delivery-truck.png
+  AssetGenImage get deliveryTruck =>
+      const AssetGenImage('assets/categories/delivery-truck.png');
+
+  /// File path: assets/categories/diet.png
+  AssetGenImage get diet => const AssetGenImage('assets/categories/diet.png');
+
+  /// File path: assets/categories/emotional.png
+  AssetGenImage get emotional =>
+      const AssetGenImage('assets/categories/emotional.png');
+
+  /// File path: assets/categories/fitness.png
+  AssetGenImage get fitness =>
+      const AssetGenImage('assets/categories/fitness.png');
+
+  /// File path: assets/categories/flame.png
+  AssetGenImage get flame => const AssetGenImage('assets/categories/flame.png');
+
+  /// File path: assets/categories/gadgets.png
+  AssetGenImage get gadgets =>
+      const AssetGenImage('assets/categories/gadgets.png');
+
+  /// File path: assets/categories/happy.png
+  AssetGenImage get happy => const AssetGenImage('assets/categories/happy.png');
+
+  /// File path: assets/categories/happy_face.png
+  AssetGenImage get happyFace =>
+      const AssetGenImage('assets/categories/happy_face.png');
+
+  /// File path: assets/categories/leaf.png
+  AssetGenImage get leaf => const AssetGenImage('assets/categories/leaf.png');
+
+  /// File path: assets/categories/makeup.png
+  AssetGenImage get makeup =>
+      const AssetGenImage('assets/categories/makeup.png');
+
+  /// File path: assets/categories/mother.png
+  AssetGenImage get mother =>
+      const AssetGenImage('assets/categories/mother.png');
+
+  /// File path: assets/categories/music.png
+  AssetGenImage get music => const AssetGenImage('assets/categories/music.png');
+
+  /// File path: assets/categories/paint.png
+  AssetGenImage get paint => const AssetGenImage('assets/categories/paint.png');
+
+  /// File path: assets/categories/party-popper.png
+  AssetGenImage get partyPopper =>
+      const AssetGenImage('assets/categories/party-popper.png');
+
+  /// File path: assets/categories/pawprint.png
+  AssetGenImage get pawprint =>
+      const AssetGenImage('assets/categories/pawprint.png');
+
+  /// File path: assets/categories/photographer.png
+  AssetGenImage get photographer =>
+      const AssetGenImage('assets/categories/photographer.png');
+
+  /// File path: assets/categories/puzzle.png
+  AssetGenImage get puzzle =>
+      const AssetGenImage('assets/categories/puzzle.png');
+
+  /// File path: assets/categories/social_media.png
+  AssetGenImage get socialMedia =>
+      const AssetGenImage('assets/categories/social_media.png');
+
+  /// File path: assets/categories/sports.png
+  AssetGenImage get sports =>
+      const AssetGenImage('assets/categories/sports.png');
+
+  /// File path: assets/categories/summer_holidays.png
+  AssetGenImage get summerHolidays =>
+      const AssetGenImage('assets/categories/summer_holidays.png');
+
+  /// File path: assets/categories/team.png
+  AssetGenImage get team => const AssetGenImage('assets/categories/team.png');
+
+  /// File path: assets/categories/theater.png
+  AssetGenImage get theater =>
+      const AssetGenImage('assets/categories/theater.png');
+
+  /// File path: assets/categories/travel.png
+  AssetGenImage get travel =>
+      const AssetGenImage('assets/categories/travel.png');
+
+  /// File path: assets/categories/tree.png
+  AssetGenImage get tree => const AssetGenImage('assets/categories/tree.png');
+
+  /// File path: assets/categories/weather_app.png
+  AssetGenImage get weatherApp =>
+      const AssetGenImage('assets/categories/weather_app.png');
+
+  /// File path: assets/categories/working_time.png
+  AssetGenImage get workingTime =>
+      const AssetGenImage('assets/categories/working_time.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        brand,
+        camera,
+        celebration,
+        console,
+        country,
+        days,
+        deliveryTruck,
+        diet,
+        emotional,
+        fitness,
+        flame,
+        gadgets,
+        happy,
+        happyFace,
+        leaf,
+        makeup,
+        mother,
+        music,
+        paint,
+        partyPopper,
+        pawprint,
+        photographer,
+        puzzle,
+        socialMedia,
+        sports,
+        summerHolidays,
+        team,
+        theater,
+        travel,
+        tree,
+        weatherApp,
+        workingTime
+      ];
+}
+
 class $AssetsFlagsGen {
   const $AssetsFlagsGen();
 
@@ -1383,6 +1541,7 @@ class $AssetsRawGen {
 class Assets {
   Assets._();
 
+  static const $AssetsCategoriesGen categories = $AssetsCategoriesGen();
   static const $AssetsFlagsGen flags = $AssetsFlagsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/database/database_helper.dart';
-
 class DashboardController extends GetxController {
   var currentBottomTabIndex = 0.obs;
   final PageController pageController = PageController();
@@ -23,18 +21,7 @@ class DashboardController extends GetxController {
     super.onClose();
   }
 
-  @override
-  void onReady() {
-    // TODO: implement onReady
-    super.onReady();
-    someDatabaseOperation();
 
-  }
 
-  void someDatabaseOperation() async {
-    final database = await Get.find<DatabaseHelper>().database;
-    List<Map> list = await database.rawQuery('SELECT * FROM hashtag');
-    print(list);
 
-  }
 }
