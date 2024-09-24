@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/widgets/custom_text_widget.dart';
+import 'package:hashtag/features/misc/offline/presentation/component/custom_chip.dart';
 
+import '../../../../../core/widgets/custom_text_widget.dart';
 import '../../domain/entities/hashtag_entitiy.dart';
 
 class TagListComponent extends StatefulWidget {
@@ -27,7 +28,6 @@ class _TagListComponentState extends State<TagListComponent> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -40,23 +40,21 @@ class _TagListComponentState extends State<TagListComponent> {
                   children: tagData.tags.split(" ")
                       .where((tag) => tag.length > 2)
                       .map((tag) {
-                    return FilterChip(
-                      labelPadding: const EdgeInsets.all(1.0),
-                      padding: const EdgeInsets.all(5.0),
-                      label: CustomTextWidget(text: tag.trim(), size: 12, colorText: Colors.black),
-                      selected: _selectedTags.contains(tag.trim()),
-                      selectedColor: Colors.blue,
-                      backgroundColor: Get.isDarkMode ? Colors.blueGrey.shade200 : Colors.grey.shade200,
-                      shape: const StadiumBorder(side: BorderSide(color: Colors.transparent)),
-                      onSelected: (bool selected) {
-                        setState(() {
-                          if (selected) {
-                            _selectedTags.add(tag.trim());
-                          } else {
-                            _selectedTags.remove(tag.trim());
-                          }
-                        });
-                      },
+                    final isSelected = _selectedTags.contains(tag.trim());
+                    return RepaintBoundary( // Helps with performance
+                      child: CustomChip(
+                        label: tag.trim(),
+                        isSelected: _selectedTags.contains(tag.trim()),
+                        onSelected: () {
+                          setState(() {
+                            if (_selectedTags.contains(tag.trim())) {
+                              _selectedTags.remove(tag.trim());
+                            } else {
+                              _selectedTags.add(tag.trim());
+                            }
+                          });
+                        },
+                      ),
                     );
                   }).toList(),
                 ),
@@ -67,7 +65,6 @@ class _TagListComponentState extends State<TagListComponent> {
       },
     );
   }
-
 
   List<String> get selectedTags => _selectedTags.toList();
 }

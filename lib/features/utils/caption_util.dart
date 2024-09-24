@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:isolate';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -31,8 +32,11 @@ class CaptionUtil extends GetxController {
 
   Future<void> loadCaptionFile() async {
     String jsonData = await rootBundle.loadString(Assets.json.quotes);
-    var jsonData2 = json.decode(jsonData) as List<dynamic>;
-    captionList = jsonData2.map((data) => Quote.fromJson(data)).toList().cast<Quote>();
+    captionList = await Isolate.run<List<Quote>>(() {
+      var jsonData2 = json.decode(jsonData) as List<dynamic>;
+      return jsonData2.map((data) => Quote.fromJson(data)).toList().cast<Quote>();
+    });
+
   }
 
 

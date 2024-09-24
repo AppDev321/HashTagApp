@@ -1,18 +1,14 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hashtag/features/dashboard/presentation/widget/dashboard_page.dart';
 import 'package:hashtag/features/onboarding/presentation/pages/onboarding_screen.dart';
 import 'package:hashtag/gen/assets.gen.dart';
-import 'package:hashtag/routes/app_pages.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/custom_logs.dart';
 import '../../../../core/utils/secure_storage.dart';
-import '../../../dashboard/presentation/get/dashboard_controller.dart';
-import '../../../home/presentation/widgets/home_page.dart';
 import '../get/splash_controller.dart';
 
 class Splash extends StatefulWidget {
@@ -91,7 +87,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return GetBuilder<SplashScreenController>(
-        init: SplashScreenController(splashRepo: Get.find(), secureStorageService: Get.find()),
+        init: SplashScreenController(apiRepo: Get.find(), secureStorageService: Get.find()),
         builder: (logic) {
           return Scaffold(
             body: Stack(

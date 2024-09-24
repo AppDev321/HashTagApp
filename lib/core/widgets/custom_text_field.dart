@@ -217,7 +217,7 @@ class CustomTextField extends StatelessWidget {
         borderSide: BorderSide(
             width: 2,
             color: borderEnable
-                ?Colors.grey.withOpacity(.1) : Theme.of(context).colorScheme.primary
+                ?Colors.grey.withOpacity(.1) : Colors.transparent
                 ),
         borderRadius: BorderRadius.circular(35),
       ),

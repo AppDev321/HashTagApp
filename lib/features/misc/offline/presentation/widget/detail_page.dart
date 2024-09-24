@@ -3,8 +3,11 @@ import 'package:get/get.dart';
 import 'package:hashtag/core/utils/app_config_service.dart';
 import 'package:hashtag/core/widgets/custom_text_widget.dart';
 
+import '../../../../../core/widgets/shadow_widget.dart';
+import '../../domain/entities/hashtag_entitiy.dart';
 import '../component/tag_list_component.dart';
 import '../get/offline_hashtag_controller.dart';
+
 class DetailsPage extends StatefulWidget {
   final SocialMediaIcons category;
 
@@ -15,21 +18,18 @@ class DetailsPage extends StatefulWidget {
 }
 
 class DetailsPageState extends State<DetailsPage> {
-  final OfflineHashTagController controller = Get.find();
-
   @override
   void initState() {
     super.initState();
-    controller.getTagsByCategory(widget.category.alias);
   }
 
   @override
   Widget build(BuildContext context) {
     // Calculate remaining height
     double statusBarHeight = MediaQuery.of(context).padding.top;
-    double appBarHeight = kToolbarHeight; // Or any height you expect for your app bar
+    double appBarHeight = kToolbarHeight;
     double totalHeight = MediaQuery.of(context).size.height;
-    double remainingHeight = totalHeight - statusBarHeight - appBarHeight ; // Adjust 50 as needed
+    double remainingHeight = totalHeight - statusBarHeight - appBarHeight;
 
     return Scaffold(
       body: SafeArea(
@@ -46,16 +46,31 @@ class DetailsPageState extends State<DetailsPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 50),
-                        GetBuilder<OfflineHashTagController>(
-                          id: controller.widgetKey,
-                          builder: (offlineController) {
-                            var loading = offlineController.isDataLoading.value; // Use observable
-                            var tagList = offlineController.offlineTagList; // Use observable list
-                            return loading
-                                ? const Center(child: CircularProgressIndicator())
-                                : SizedBox(
+                        FutureBuilder<List<HashTagEntity>>(
+                          future: Get.find<OfflineHashTagController>().getTagsByCategory(widget.category.alias),
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState == ConnectionState.waiting) {
+                              return SizedBox(
                                 height: remainingHeight,
-                                child: TagListComponent(tagList: tagList,));
+                                child: const Center(child: CircularProgressIndicator()),
+                              );
+                            } else if (snapshot.hasError) {
+                              return SizedBox(
+                                height: remainingHeight,
+                                child: Center(child: Text('Error: ${snapshot.error}')),
+                              );
+                            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                              return SizedBox(
+                                height: remainingHeight,
+                                child: const Center(child: Text('No tags found')),
+                              );
+                            }
+
+                            var tagList = snapshot.data!;
+                            return SizedBox(
+                              height: remainingHeight,
+                              child: TagListComponent(tagList: tagList),
+                            );
                           },
                         ),
                       ],
@@ -67,15 +82,20 @@ class DetailsPageState extends State<DetailsPage> {
             Positioned(
               right: 10,
               child: Hero(
-                tag: widget.category.name,
-                child: Image.asset(
-                  widget.category.image,
-                  height: 50,
-                  width: 50,
+                tag:widget.category.name,
+                child: SimpleShadow(
+                  opacity: 0.5,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2, 2),
+                  sigma: 5,
+                  child: Image.asset(
+                    widget.category.image,
+                    height: 50,
+                    width: 50,
+                  ), // Default: 2
                 ),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.only(left: 10.0, top: 10.0),
               child: Row(
@@ -86,8 +106,12 @@ class DetailsPageState extends State<DetailsPage> {
                     },
                     icon: const Icon(Icons.arrow_back_ios),
                   ),
-                  SizedBox(width: 10,),
-                  CustomTextWidget(text: widget.category.name,fontWeight: FontWeight.w500,size: 25,)
+                  const SizedBox(width: 10),
+                  CustomTextWidget(
+                    text: widget.category.name,
+                    fontWeight: FontWeight.w500,
+                    size: 25,
+                  ),
                 ],
               ),
             ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hashtag/core/utils/app_config_service.dart';
-import 'package:hashtag/core/utils/scoped_function.dart';
 import 'package:hashtag/core/widgets/custom_text_widget.dart';
-import '../../../splash/domain/entities/splash_model.dart';
+
+import '../../../../core/api/domain/entities/app_config_model.dart';
 
 class SocialMediaList extends StatefulWidget {
   const SocialMediaList({super.key});
@@ -20,9 +20,9 @@ class _SocialMediaListState extends State<SocialMediaList> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    /*WidgetsBinding.instance.addPostFrameCallback((_) {
       _scrollToSelectedItem();
-    });
+    });*/
   }
 
   void _scrollToSelectedItem() {
@@ -62,8 +62,8 @@ class _SocialMediaListState extends State<SocialMediaList> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomTextWidget(text: items[index].platform, size: 16, fontWeight: FontWeight.w600,),
-                  CustomTextWidget(text: "Allowed: ${items[index].maxHashtagsChar}", fontWeight: FontWeight.w600,),
-                  CustomTextWidget(text: items[index].recommendation, size: 12,),
+                  CustomTextWidget(text: "Allowed: ${items[index].maxHashtagsChar}",  size: 12,fontWeight: FontWeight.w600,),
+                  CustomTextWidget(text: items[index].recommendation, size: 10,),
                 ],
               ),
               leading: Image.asset(

@@ -7,7 +7,6 @@ import 'package:hashtag/features/misc/offline/presentation/get/offline_hashtag_c
 import 'package:hashtag/routes/app_pages.dart';
 
 import '../../../../../core/widgets/shadow_widget.dart';
-import 'detail_page.dart';
 
 class OfflineHashTagScreen extends GetView<OfflineHashTagController> {
   const OfflineHashTagScreen({super.key});

@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SplashScreenController>(
-        init: SplashScreenController(splashRepo: Get.find(),secureStorageService: Get.find()),
+        init: SplashScreenController(apiRepo: Get.find(),secureStorageService: Get.find()),
         builder: (controller) {
           return Scaffold(
             body: Stack(

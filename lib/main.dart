@@ -14,7 +14,6 @@ import 'package:path_provider/path_provider.dart';
 import 'core/styles/theme.dart';
 import 'core/utils/secure_storage.dart';
 import 'features/utils/caption_util.dart';
-import 'gen/assets.gen.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

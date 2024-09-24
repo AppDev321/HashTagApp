@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:hashtag/core/utils/custom_logs.dart';
 import 'package:hashtag/features/misc/offline/data/repositories/hash_tag_db_repo.dart';
 import 'package:hashtag/features/misc/offline/domain/entities/hashtag_entitiy.dart';
 import 'package:sqflite/sqflite.dart';
@@ -9,8 +8,6 @@ class OfflineHashTagController extends GetxController {
   late HashTagDbRepository dbRepository;
   late Database mDatabaseHelper;
 
-  var isDataLoading = false.obs;
-  var offlineTagList = <HashTagEntity>[].obs;
   final String widgetKey = "updateOfflineListWidget";
 
   @override
@@ -24,12 +21,9 @@ class OfflineHashTagController extends GetxController {
     dbRepository = HashTagDbRepository(mDatabaseHelper);
   }
 
-  Future<void> getTagsByCategory(String categoryName) async {
-    isDataLoading.value = true;
-    update([widgetKey]);
-    var dataList = await dbRepository.getTagsByCategory(categoryName);
-    offlineTagList.value = dataList;
-    isDataLoading.value = false;
-    update([widgetKey]);
+  Future<List<HashTagEntity>> getTagsByCategory(String categoryName) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    final dataList = await dbRepository.fetchTagsByCategory(categoryName);
+   return dataList;
   }
 }

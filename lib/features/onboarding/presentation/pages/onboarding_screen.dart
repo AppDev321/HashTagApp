@@ -57,7 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: height * 0.72, // Adjust height based on screen size
+                height: height * 0.74, // Adjust height based on screen size
                 child: PageView.builder(
                   physics: const BouncingScrollPhysics(),
                   controller: _controller,

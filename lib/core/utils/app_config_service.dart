@@ -1,6 +1,8 @@
-import 'package:hashtag/features/splash/domain/entities/splash_model.dart';
+
+import 'package:hashtag/core/api/domain/entities/best_tags.dart';
 
 import '../../gen/assets.gen.dart';
+import '../api/domain/entities/app_config_model.dart';
 
 class ConfigService {
   static final ConfigService _instance = ConfigService._internal();
@@ -15,7 +17,8 @@ class ConfigService {
   }
 
   AppConfig? get configData => _configData;
-
+  List<CommonTags> bestTagsList = [];
+  List<CommonTags> newTagsList = [];
 
   List<SocialMediaIcons> offlineTagsCategories = [
     SocialMediaIcons(name: 'Popular', alias: "mpth", image: Assets.categories.flame.path),

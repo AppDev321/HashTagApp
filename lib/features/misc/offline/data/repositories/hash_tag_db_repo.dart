@@ -5,8 +5,7 @@ class HashTagDbRepository {
 
   HashTagDbRepository(this.database);
 
-  Future<List<HashTagEntity>> getTagsByCategory(String categoryName) async {
-    print(categoryName);
+  Future<List<HashTagEntity>> fetchTagsByCategory(String categoryName) async {
     final List<Map<String, dynamic>> maps = await database.query(
       'hashtag',
       where: 'category = ?',
