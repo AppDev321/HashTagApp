@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hashtag/core/widgets/button_widget.dart';
 
 class AnimatedSearchButton extends StatefulWidget {
-  const AnimatedSearchButton({super.key});
+  final void Function()? onPressed;
+  const AnimatedSearchButton({super.key, this.onPressed});
 
   @override
   _AnimatedSearchButtonState createState() => _AnimatedSearchButtonState();
@@ -47,7 +48,7 @@ class _AnimatedSearchButtonState extends State<AnimatedSearchButton>
           ),
         );
       },
-      child: ButtonWidget(text: "Generate HashTag", buttonType: ButtonType.fill,color: Colors.red.withOpacity(0.8),width: 200,),
+      child: ButtonWidget(text: "Generate HashTag", buttonType: ButtonType.fill,color: Colors.red.withOpacity(0.8),width: 200,onPressed: widget.onPressed,),
 
     );
   }

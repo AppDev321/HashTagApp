@@ -115,5 +115,5 @@ class AppStrings {
   static const String captions = "Captions";
   static const String offline_hashtags = "Offline Tags";
   static const String header1= "Create effective hashtags to elevate your social media posts and boost engagement!";
-
+  static const String homeText1= "Our Recommendations";
 }

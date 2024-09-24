@@ -8,6 +8,7 @@ import 'package:hashtag/gen/assets.gen.dart';
 
 import '../../../../core/popups/bottom_sheet_dialog.dart';
 import '../../../../core/styles/colors.dart';
+import '../../../../gen/fonts.gen.dart';
 import '../components/animated_search_button.dart';
 import '../components/gradient_search_bar.dart';
 import '../components/social_recommendation_settings.dart';
@@ -23,8 +24,7 @@ class HomePage extends GetView<HomeController> {
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.hexToColor("#A8E6ce"),
-                  AppColors.hexToColor("#dcedc2")],
+                colors: [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")],
                 begin: Alignment.bottomRight,
                 end: Alignment.topLeft,
               ),
@@ -56,15 +56,28 @@ class HomePage extends GetView<HomeController> {
         ),
         body: Column(
           children: [
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             const Padding(
               padding: EdgeInsets.all(20.0),
-              child: CustomTextWidget(text:AppStrings.header1,size: 12),
+              child: CustomTextWidget(text: AppStrings.header1, size: 12),
             ),
-            const GradientSearchBox(),
-            const SizedBox(height: 50,),
-            const AnimatedSearchButton(),
+            GradientSearchBox(onChanged: (value) {}),
+            const SizedBox(
+              height: 50,
+            ),
+            AnimatedSearchButton(
+              onPressed: () {},
+            ),
             const Spacer(),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                AppStrings.homeText1,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, fontFamily: FontFamily.mulish),
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -77,9 +90,7 @@ class HomePage extends GetView<HomeController> {
                   ],
                   shadowColor: AppColors.hexToColor("#3f51b5"),
                   imagePath: Assets.categories.celebration.path,
-                  callback: () {
-
-                  },
+                  callback: () {},
                 ),
                 HomeCard(
                   name: "New Tags",
