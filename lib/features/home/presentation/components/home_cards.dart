@@ -95,19 +95,16 @@ class HomeCard extends StatelessWidget {
               Positioned(
                 top: 0,
                 left: 8,
-                child: Hero(
-                  tag:imagePath,
-                  child: SimpleShadow(
-                    opacity: 0.7,
-                    color: Colors.black,
-                    offset: const Offset(4, 4),
-                    sigma: 5,
-                    child: Image.asset(
-                      imagePath,
-                      height: 70,
-                      width: 70,
-                    ), // Default: 2
-                  ),
+                child: SimpleShadow(
+                  opacity: 0.7,
+                  color: Colors.black,
+                  offset: const Offset(4, 4),
+                  sigma: 5,
+                  child: Image.asset(
+                    imagePath,
+                    height: 70,
+                    width: 70,
+                  ), // Default: 2
                 ),
               )
             ],

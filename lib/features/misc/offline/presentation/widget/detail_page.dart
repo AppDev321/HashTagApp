@@ -8,20 +8,10 @@ import '../../domain/entities/hashtag_entitiy.dart';
 import '../component/tag_list_component.dart';
 import '../get/offline_hashtag_controller.dart';
 
-class DetailsPage extends StatefulWidget {
+class DetailsPage extends StatelessWidget {
   final SocialMediaIcons category;
 
   const DetailsPage({Key? key, required this.category}) : super(key: key);
-
-  @override
-  DetailsPageState createState() => DetailsPageState();
-}
-
-class DetailsPageState extends State<DetailsPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +37,7 @@ class DetailsPageState extends State<DetailsPage> {
                       children: [
                         const SizedBox(height: 50),
                         FutureBuilder<List<HashTagEntity>>(
-                          future: Get.find<OfflineHashTagController>().getTagsByCategory(widget.category.alias),
+                          future: Get.find<OfflineHashTagController>().getTagsByCategory(category.alias),
                           builder: (context, snapshot) {
                             if (snapshot.connectionState == ConnectionState.waiting) {
                               return SizedBox(
@@ -82,17 +72,17 @@ class DetailsPageState extends State<DetailsPage> {
             Positioned(
               right: 10,
               child: Hero(
-                tag:widget.category.name,
+                tag: category.name,
                 child: SimpleShadow(
                   opacity: 0.5,
                   color: Colors.black.withOpacity(0.5),
                   offset: const Offset(2, 2),
                   sigma: 5,
                   child: Image.asset(
-                    widget.category.image,
+                    category.image,
                     height: 50,
                     width: 50,
-                  ), // Default: 2
+                  ),
                 ),
               ),
             ),
@@ -108,7 +98,7 @@ class DetailsPageState extends State<DetailsPage> {
                   ),
                   const SizedBox(width: 10),
                   CustomTextWidget(
-                    text: widget.category.name,
+                    text: category.name,
                     fontWeight: FontWeight.w500,
                     size: 25,
                   ),

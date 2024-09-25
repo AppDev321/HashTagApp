@@ -10,6 +10,7 @@ abstract class Routes {
   static const ON_CAPTION = _Paths.ON_CAPTION;
   static const ON_OFFLINE_HASHTAG= _Paths.ON_OFFLINE_HASHTAG;
   static const ON_OFFLINE_HASHTAG_DETAIL= _Paths.ON_OFFLINE_HASHTAG_DETAIL;
+  static const ON_HOME_TAG_DETAIL = _Paths.ON_HOME_TAG_DETAIL;
 }
 
 abstract class _Paths {
@@ -22,4 +23,5 @@ abstract class _Paths {
   static const ON_CAPTION = '/caption';
   static const ON_OFFLINE_HASHTAG = '/offline_hash_tag';
   static const ON_OFFLINE_HASHTAG_DETAIL ="/offline_hash_tag_detail";
+  static const ON_HOME_TAG_DETAIL = "/home_tag_detail";
 }

@@ -32,24 +32,27 @@ class _AnimatedSearchButtonState extends State<AnimatedSearchButton>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
+    return  AnimatedBuilder(
       animation: animationController,
       builder: (context, child) {
         return Container(
           decoration: ShapeDecoration(
             color: Colors.red.withOpacity(0.2),
-            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(
-              8.0 * animationController.value,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(50)),
             ),
-            child: child,
           ),
+          padding: EdgeInsets.all(5.0 + (4.0 * animationController.value)), // Increase padding
+          child: child,
         );
       },
-      child: ButtonWidget(text: "Generate HashTag", buttonType: ButtonType.fill,color: Colors.red.withOpacity(0.8),width: 200,onPressed: widget.onPressed,),
-
+      child: ButtonWidget(
+        text: "Generate HashTag",
+        buttonType: ButtonType.fill,
+        color: Colors.red.withOpacity(0.8),
+        width: 200,
+        onPressed: widget.onPressed,
+      ),
     );
   }
 }

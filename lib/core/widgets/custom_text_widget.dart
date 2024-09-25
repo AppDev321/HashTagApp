@@ -46,8 +46,7 @@ class CustomTextWidget extends StatelessWidget {
               fontSize: size,
               fontFamily: fontFamily,
               fontWeight: fontWeight,
-              color: colorText,
-              letterSpacing: 0.5),
+              color: colorText),
         ));
   }
 }

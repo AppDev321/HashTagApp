@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hashtag/core/constants/app_strings.dart';
+import 'package:hashtag/core/utils/app_config_service.dart';
 import 'package:hashtag/core/widgets/custom_text_widget.dart';
 import 'package:hashtag/features/home/presentation/components/home_cards.dart';
 import 'package:hashtag/features/home/presentation/get/home_controller.dart';
@@ -9,12 +10,23 @@ import 'package:hashtag/gen/assets.gen.dart';
 import '../../../../core/popups/bottom_sheet_dialog.dart';
 import '../../../../core/styles/colors.dart';
 import '../../../../gen/fonts.gen.dart';
+import '../../../../routes/app_pages.dart';
 import '../components/animated_search_button.dart';
 import '../components/gradient_search_bar.dart';
 import '../components/social_recommendation_settings.dart';
 
 class HomePage extends GetView<HomeController> {
-  const HomePage({super.key});
+   HomePage({super.key});
+
+   List<Color> topTagGradientColor =  [
+    AppColors.hexToColor("#1769aa"),
+    AppColors.hexToColor("#2196f3"),
+  ];
+
+   List<Color> newTagGradientColor = [
+     AppColors.hexToColor("#3f51b5"),
+     AppColors.hexToColor("#5C5EDD"),
+   ];
 
   @override
   Widget build(BuildContext context) {
@@ -84,24 +96,31 @@ class HomePage extends GetView<HomeController> {
                 HomeCard(
                   name: "Top Tags",
                   desc: "Discover Our Top Tags",
-                  backgroundColor: [
-                    AppColors.hexToColor("#3f51b5"),
-                    AppColors.hexToColor("#5C5EDD"),
-                  ],
-                  shadowColor: AppColors.hexToColor("#3f51b5"),
+                  backgroundColor:topTagGradientColor,
+                  shadowColor: topTagGradientColor[0],
                   imagePath: Assets.categories.celebration.path,
-                  callback: () {},
+                  callback: () {
+                    var categoryData = SocialMediaIcons(name: "Top Tags", image: Assets.categories.celebration.path);
+                    var tagList = ConfigService().bestTagsList;
+                    var appBarColors = topTagGradientColor;
+                    Get.toNamed(AppPages.ON_HOME_TAG_DETAIL, arguments: {AppPages.ARG_CATEGORY: categoryData, AppPages.ARG_TAG_LIST: tagList, AppPages.ARG_APP_BAR_COLORS: appBarColors});
+                  },
                 ),
-                HomeCard(
-                  name: "New Tags",
-                  desc: "See Our Most Popular Tags",
-                  backgroundColor: [
-                    AppColors.hexToColor("#1769aa"),
-                    AppColors.hexToColor("#2196f3"),
-                  ],
-                  shadowColor: AppColors.hexToColor("#1769aa"),
-                  imagePath: Assets.categories.flame.path,
-                  callback: () {},
+                Hero(
+                  tag: "New Tags",
+                  child: HomeCard(
+                    name: "New Tags",
+                    desc: "See Our Most Popular Tags",
+                    backgroundColor: newTagGradientColor,
+                    shadowColor: newTagGradientColor[0],
+                    imagePath: Assets.categories.flame.path,
+                    callback: () {
+                      var categoryData = SocialMediaIcons(name: "New Tags", image: Assets.categories.flame.path);
+                      var tagList = ConfigService().newTagsList;
+                      var appBarColors = newTagGradientColor;
+                      Get.toNamed(AppPages.ON_HOME_TAG_DETAIL, arguments: {AppPages.ARG_CATEGORY: categoryData, AppPages.ARG_TAG_LIST: tagList, AppPages.ARG_APP_BAR_COLORS: appBarColors});
+                    },
+                  ),
                 ),
               ],
             ),

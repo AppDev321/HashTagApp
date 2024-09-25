@@ -30,7 +30,7 @@ class GradientSearchBox extends StatelessWidget {
         padding: const EdgeInsets.all(5.0),
         child: CustomTextField(
           borderEnable: false,
-          text: AppStrings.search,
+          text: AppStrings.searchTag,
           fontWeight: FontWeight.normal,
           onChanged: onChanged,
         ),
