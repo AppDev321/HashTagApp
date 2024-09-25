@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hashtag/core/api/domain/entities/best_tags.dart';
 import 'package:hashtag/features/misc/offline/presentation/component/custom_chip.dart';
 
+import '../../../utils/common_utils.dart';
+
 
 class TagListComponent extends StatefulWidget {
   final List<CommonTags> tagList;
@@ -29,10 +31,12 @@ class _TagListComponentState extends State<TagListComponent> {
             Wrap(
                 children: widget.tagList.map((data) {
               var tag = data.tag;
+
               final isSelected = _selectedTags.contains(tag);
               return CustomChip(
                 label: tag,
                 isSelected: isSelected,
+                tagCount: formatNumber(data.usage.toInt()),
                 onSelected: () {
                   setState(() {
                     if (_selectedTags.contains(tag.trim())) {

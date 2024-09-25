@@ -70,7 +70,7 @@ class HomeTagDetailsPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           Expanded(
-            child: listTags.isEmpty
+            child: listTags.isNotEmpty
                 ? SingleChildScrollView(
                   child: Container(
                       margin: const EdgeInsets.only(bottom: 50),

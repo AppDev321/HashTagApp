@@ -5,12 +5,14 @@ class CustomChip extends StatelessWidget {
   final String label;
   final bool isSelected;
   final VoidCallback onSelected;
+  final String tagCount;
 
   const CustomChip({
     Key? key,
     required this.label,
     required this.isSelected,
     required this.onSelected,
+    this.tagCount = ""
   }) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class CustomChip extends StatelessWidget {
           border: Border.all(color: Colors.transparent),
         ),
         child: Text(
-          label,
+          tagCount.isEmpty? label: "$label $tagCount" ,
           style: TextStyle(color: isSelected ? Colors.white : Colors.black ,fontSize: 12),
         ),
       ),
