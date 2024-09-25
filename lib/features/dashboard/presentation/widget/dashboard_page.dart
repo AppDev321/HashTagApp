@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hashtag/features/misc/presentation/widget/misc_page.dart';
 
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/styles/colors.dart';
 import '../../../home/presentation/widgets/home_page.dart';
 import '../../../settings/presentation/widget/settings_page.dart';
 import '../get/dashboard_controller.dart';
@@ -26,22 +27,30 @@ class DashboardPage extends GetView<DashboardController> {
       ),
       bottomNavigationBar: Obx(() {
         return ClipRRect(
-          borderRadius:  const BorderRadius.vertical(top: Radius.circular(20)),
+          borderRadius:  const BorderRadius.vertical(top: Radius.circular(10)),
           child: Container(
             decoration: BoxDecoration(
-              boxShadow: [
+          gradient: LinearGradient(
+            colors: [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")],
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft,
+          ) ,
+              /*boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
                   spreadRadius: 1,
                   blurRadius: 5,
                   offset: const Offset(0, -1),
                 ),
-              ],
+              ],*/
             ),
             child: BottomNavigationBar(
               elevation: 0,
               currentIndex: controller.currentBottomTabIndex.value,
               onTap: controller.onTabTapped,
+              backgroundColor: Colors.transparent,
+              selectedItemColor: Colors.blueAccent,
+              unselectedItemColor:Colors.black ,
 
               items: const [
                 BottomNavigationBarItem(

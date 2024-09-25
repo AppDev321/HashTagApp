@@ -1,5 +1,5 @@
 class AppUrls {
-  static const applicationURL = 'https://cuzzytechai-appdev321-cuzzy-techs-projects.vercel.app'; //'http://192.168.56.57:2121';
+  static const applicationURL = 'https://cuzzytechai.vercel.app'; //'http://192.168.56.57:2121';
   static const baseUrl = "$applicationURL/";
   static const socketIOUrl = "";
 

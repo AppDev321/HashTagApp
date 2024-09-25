@@ -66,23 +66,28 @@ class HomeTagDetailsPage extends StatelessWidget {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Expanded(
-          child: listTags.isNotEmpty
-              ? Container(
-                  margin: const EdgeInsets.only(bottom: 50),
-                  padding: const EdgeInsets.all(8.0),
-                  child: TagListComponent(
-                    tagList: listTags,
-                    categoryName: category.name,
-                  ),
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Expanded(
+            child: listTags.isEmpty
+                ? SingleChildScrollView(
+                  child: Container(
+                      margin: const EdgeInsets.only(bottom: 50),
+                      padding: const EdgeInsets.all(8.0),
+                      child: TagListComponent(
+                        tagList: listTags,
+                        categoryName: category.name,
+                      ),
+                    ),
                 )
-              : const Center(
-                  child: CustomTextWidget(
-                    text: AppStrings.defaultNotFoundErrorMessage,
+                : const Center(
+                    child: CustomTextWidget(
+                      text: AppStrings.defaultNotFoundErrorMessage,
+                    ),
                   ),
-                ),
-        ),
+          ),
+        ],
       ),
     );
   }

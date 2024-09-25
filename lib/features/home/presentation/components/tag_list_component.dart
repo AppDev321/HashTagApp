@@ -18,35 +18,33 @@ class _TagListComponentState extends State<TagListComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Card(
-        elevation: 3,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
+    return Card(
+      elevation: 3,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
 
-              const SizedBox(height: 10),
-              Wrap(
-                  children: widget.tagList.map((data) {
-                var tag = data.tag;
-                final isSelected = _selectedTags.contains(tag);
-                return CustomChip(
-                  label: tag,
-                  isSelected: isSelected,
-                  onSelected: () {
-                    setState(() {
-                      if (_selectedTags.contains(tag.trim())) {
-                        _selectedTags.remove(tag.trim());
-                      } else {
-                        _selectedTags.add(tag.trim());
-                      }
-                    });
-                  },
-                );
-              }).toList())
-            ],
-          ),
+            const SizedBox(height: 10),
+            Wrap(
+                children: widget.tagList.map((data) {
+              var tag = data.tag;
+              final isSelected = _selectedTags.contains(tag);
+              return CustomChip(
+                label: tag,
+                isSelected: isSelected,
+                onSelected: () {
+                  setState(() {
+                    if (_selectedTags.contains(tag.trim())) {
+                      _selectedTags.remove(tag.trim());
+                    } else {
+                      _selectedTags.add(tag.trim());
+                    }
+                  });
+                },
+              );
+            }).toList())
+          ],
         ),
       ),
     );

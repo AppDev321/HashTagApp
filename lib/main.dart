@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -8,8 +6,6 @@ import 'package:hashtag/core/theme/theme_provider.dart';
 import 'package:hashtag/init_core.dart';
 import 'package:hashtag/init_main.dart';
 import 'package:hashtag/routes/app_pages.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 
 import 'core/styles/theme.dart';
 import 'core/utils/secure_storage.dart';
@@ -43,7 +39,7 @@ class MyApp extends StatelessWidget {
         child: AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle(
             statusBarColor: isDarkMode ? Colors.black : Colors.white, // Background color
-            systemNavigationBarColor: isDarkMode ? Colors.grey[850] : Colors.grey[300], // Navigation bar color
+            systemNavigationBarColor: Colors.transparent,//isDarkMode ? Colors.grey[850] : Colors.grey[300], // Navigation bar color
             statusBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark, // Status bar icon brightness
             systemNavigationBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark, // Navigation bar icon brightness
           ),
