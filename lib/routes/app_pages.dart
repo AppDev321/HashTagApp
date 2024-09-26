@@ -88,12 +88,14 @@ class AppPages {
         page: () {
           final String searchWord = Get.arguments[ARG_CATEGORY];
           final SearchApiResponse searchResponse = Get.arguments[ARG_TAG_LIST];
+          final List<Color> appBarColors = Get.arguments[ARG_APP_BAR_COLORS];
           return SearchTagDetailsPage(
             searchWord: searchWord,
             searchApiResponse: searchResponse,
+            appBarColor: appBarColors,
           );
         },
-        transition: Transition.leftToRight
+        transition: Transition.rightToLeft
       //binding: OfflineHashtagsBindings()
     ),
 

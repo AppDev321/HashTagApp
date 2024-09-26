@@ -31,7 +31,7 @@ class DashboardPage extends GetView<DashboardController> {
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")],
+                colors: AppColors.appBarColorGradient,
                 begin: Alignment.bottomRight,
                 end: Alignment.topLeft,
               ),
@@ -49,7 +49,7 @@ class DashboardPage extends GetView<DashboardController> {
               currentIndex: controller.currentBottomTabIndex.value,
               onTap: controller.onTabTapped,
               backgroundColor: Colors.transparent,
-              selectedItemColor: Colors.blueAccent,
+              selectedItemColor: Colors.white,
               unselectedItemColor: Colors.black,
               items: const [
                 BottomNavigationBarItem(

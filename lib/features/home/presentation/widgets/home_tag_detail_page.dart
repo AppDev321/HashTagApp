@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
+import 'package:hashtag/gen/fonts.gen.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/app_config_service.dart';
@@ -41,6 +42,7 @@ class HomeTagDetailsPage extends StatelessWidget {
           text: category.name,
           fontWeight: FontWeight.w600,
           colorText: Colors.white,
+          fontFamily: FontFamily.mulish,
 
           size: 25,
         ),
@@ -76,8 +78,7 @@ class HomeTagDetailsPage extends StatelessWidget {
                       margin: const EdgeInsets.only(bottom: 50),
                       padding: const EdgeInsets.all(8.0),
                       child: UsageTagListComponent(
-                        tagList: listTags,
-                        categoryName: category.name,
+                        tagList: listTags
                       ),
                     )
                 : const Center(

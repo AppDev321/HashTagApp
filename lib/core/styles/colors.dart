@@ -42,7 +42,10 @@ class AppColors {
     ],
   );
 
-  static List<Color> appBarColorGradient = [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")];
+  static List<Color> appBarColorGradient = [
+    AppColors.hexToColor("#617388"),
+    AppColors.hexToColor("#303943")];
+
   static List<Color> topTagGradientColor = [
     AppColors.hexToColor("#1769aa"),
     AppColors.hexToColor("#2196f3"),
@@ -77,6 +80,17 @@ class AppColors {
     [
       AppColors.hexToColor("#1b5e20"),
       AppColors.hexToColor("#43a047"),
+    ],
+
+    [
+      AppColors.hexToColor("#617388"),
+      AppColors.hexToColor("#303943"),
+    ],
+
+
+    [
+      AppColors.hexToColor("#E26352"),
+      AppColors.hexToColor("#B85143"),
     ],
     //appBarColorGradient,
     newTagGradientColor,

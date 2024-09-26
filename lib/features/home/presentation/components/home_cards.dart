@@ -8,13 +8,12 @@ class HomeCard extends StatelessWidget {
     required this.name,
     required this.desc,
     required this.backgroundColor,
-    required this.shadowColor, required this.imagePath, required this.callback,
+    required this.imagePath, required this.callback,
   }) : super(key: key);
 
   final String name;
   final String desc;
   final List<Color> backgroundColor;
-  final Color shadowColor;
   final String imagePath;
   final Function(List<Color>) callback;
   @override
@@ -32,7 +31,7 @@ class HomeCard extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     boxShadow: <BoxShadow>[
-                      BoxShadow(color: shadowColor.withOpacity(0.6), offset: const Offset(1.1, 4.0), blurRadius: 8.0),
+                      BoxShadow(color: backgroundColor[0].withOpacity(0.6), offset: const Offset(1.1, 4.0), blurRadius: 8.0),
                     ],
                     gradient: LinearGradient(
                       colors: backgroundColor,

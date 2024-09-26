@@ -14,13 +14,10 @@ class GradientSearchBox extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         boxShadow: <BoxShadow>[
-          BoxShadow(color: AppColors.hexToColor("#A8E6ce").withOpacity(0.6), offset: const Offset(1.1, 4.0), blurRadius: 8.0),
+          BoxShadow(color: AppColors.appBarColorGradient[0].withOpacity(0.6), offset: const Offset(1.1, 4.0), blurRadius: 8.0),
         ],
         gradient: LinearGradient(
-          colors: [
-            AppColors.hexToColor("#A8E6ce"),
-            AppColors.hexToColor("#dcedc2"),
-          ],
+          colors: AppColors.appBarColorGradient,
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

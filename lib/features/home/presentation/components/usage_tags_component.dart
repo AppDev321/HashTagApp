@@ -8,9 +8,8 @@ import '../../../utils/common_utils.dart';
 
 class UsageTagListComponent extends StatefulWidget {
   final List<CommonTags> tagList;
-  final String categoryName;
 
-  const UsageTagListComponent({super.key, required this.tagList, required this.categoryName});
+  const UsageTagListComponent({super.key, required this.tagList});
 
   @override
   _UsageTagListComponentState createState() => _UsageTagListComponentState();
@@ -67,37 +66,7 @@ class _UsageTagListComponentState extends State<UsageTagListComponent> {
           );
         });
 
-    Card(
-      elevation: 3,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 10),
-            Wrap(
-                children: widget.tagList.map((data) {
-              var tag = data.tag;
 
-              final isSelected = _selectedTags.contains(tag);
-              return CustomChip(
-                label: tag,
-                isSelected: isSelected,
-                tagCount: formatNumber(data.usage.toInt()),
-                onSelected: () {
-                  setState(() {
-                    if (_selectedTags.contains(tag.trim())) {
-                      _selectedTags.remove(tag.trim());
-                    } else {
-                      _selectedTags.add(tag.trim());
-                    }
-                  });
-                },
-              );
-            }).toList())
-          ],
-        ),
-      ),
-    );
   }
 
   List<String> get selectedTags => _selectedTags.toList();

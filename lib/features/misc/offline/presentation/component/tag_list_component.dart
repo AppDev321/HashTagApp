@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hashtag/core/utils/utils.dart';
+import 'package:hashtag/core/utils/widget_extensions.dart';
 import 'package:hashtag/features/misc/offline/presentation/component/custom_chip.dart';
 
 import '../../../../../core/widgets/custom_text_widget.dart';
@@ -32,9 +34,29 @@ class _TagListComponentState extends State<TagListComponent> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(5.0),
-                  child: CustomTextWidget(text: tagData.mainText),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomTextWidget(text: tagData.mainText),
+
+                      Row(children: [
+                        const CustomTextWidget(text: "Copy All",size: 12,),
+                        CustomSizeBox.width(10),
+                        InkWell(
+                            onTap: (){
+                              copyToClipboard(context, tagData.tags);
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(Icons.copy),
+                            ))
+
+                      ],)
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 10),
+
                 Wrap(
                   spacing: 8.0,
                   children: tagData.tags.split(" ")

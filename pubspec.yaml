@@ -58,7 +58,7 @@ dev_dependencies:
   build_runner:
 
 flutter_native_splash:
-  image: assets/images/hashtag.png
+  image: assets/images/hashtag_icon.png
   # branding: assets/icons/3x/branding_light.png
   android: true
   ios: true
@@ -66,7 +66,7 @@ flutter_native_splash:
   color: "#F1FFEA"
   fullscreen: true
   android_12:
-    image: assets/images/hashtag.png
+    image: assets/images/hashtag_icon.png
     # branding: assets/icons/3x/branding_light.png
     # color_dark: 1F1B16
     color: "#F1FFEA"
@@ -74,7 +74,7 @@ flutter_native_splash:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/hashtag.png"
+  image_path: "assets/images/hashtag_icon.png"
 
 flutter:
   uses-material-design: true

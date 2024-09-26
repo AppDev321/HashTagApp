@@ -12,6 +12,10 @@ import 'package:flutter/widgets.dart';
 class $AssetsCategoriesGen {
   const $AssetsCategoriesGen();
 
+  /// File path: assets/categories/besttag.png
+  AssetGenImage get besttag =>
+      const AssetGenImage('assets/categories/besttag.png');
+
   /// File path: assets/categories/brand.png
   AssetGenImage get brand => const AssetGenImage('assets/categories/brand.png');
 
@@ -132,6 +136,7 @@ class $AssetsCategoriesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        besttag,
         brand,
         camera,
         celebration,

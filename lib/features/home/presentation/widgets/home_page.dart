@@ -23,6 +23,9 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+          ),
           elevation: 0,
           flexibleSpace: Container(
             decoration: BoxDecoration(
@@ -38,6 +41,7 @@ class HomePage extends GetView<HomeController> {
             text: AppStrings.appTitle,
             size: 20,
             fontWeight: FontWeight.bold,
+            colorText: Colors.white,
           ),
           centerTitle: false,
           leading: Padding(
@@ -92,12 +96,10 @@ class HomePage extends GetView<HomeController> {
                   name: "Top Tags",
                   desc: "Discover Our Top Tags",
                   backgroundColor: AppColors.getRandomGradientColor(),
-                  shadowColor: AppColors.topTagGradientColor[0],
                   imagePath: Assets.categories.celebration.path,
                   callback: (appBarColors) {
                     var categoryData = SocialMediaIcons(name: "Top Tags", image: Assets.categories.celebration.path);
                     var tagList = ConfigService().bestTagsList;
-
                     Get.toNamed(AppPages.ON_HOME_TAG_DETAIL, arguments: {AppPages.ARG_CATEGORY: categoryData, AppPages.ARG_TAG_LIST: tagList, AppPages.ARG_APP_BAR_COLORS: appBarColors});
                   },
                 ),
@@ -107,7 +109,6 @@ class HomePage extends GetView<HomeController> {
                     name: "New Tags",
                     desc: "See Our Most Popular Tags",
                     backgroundColor: AppColors.getRandomGradientColor(),
-                    shadowColor: AppColors.newTagGradientColor[0],
                     imagePath: Assets.categories.flame.path,
                     callback: (appBarColors) {
                       var categoryData = SocialMediaIcons(name: "New Tags", image: Assets.categories.flame.path);
