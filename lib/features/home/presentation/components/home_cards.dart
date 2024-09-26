@@ -16,11 +16,11 @@ class HomeCard extends StatelessWidget {
   final List<Color> backgroundColor;
   final Color shadowColor;
   final String imagePath;
-  final VoidCallback callback;
+  final Function(List<Color>) callback;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: callback,
+      onTap: (){callback(backgroundColor);},
       child: SizedBox(
         height: 180,
         child: SizedBox(

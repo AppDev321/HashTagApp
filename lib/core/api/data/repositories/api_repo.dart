@@ -1,4 +1,5 @@
-import 'package:hashtag/core/api/domain/entities/best_tags.dart';
+import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
+import 'package:hashtag/core/api/domain/entities/search_api_response.dart';
 import 'package:hashtag/core/constants/app_urls.dart';
 import 'package:hashtag/core/network/api_manager.dart';
 
@@ -28,4 +29,11 @@ class ApiRepo {
       return await remoteDataSource.fetchApiHashTags(AppUrls.newTagsUrl);
     });
   }
+
+  Future<SearchApiResponse> getSearchTagsApi(String tagWord) async {
+    return apiManager.handleRequest(() async {
+      return await remoteDataSource.searchTagUsingApi(tagWord);
+    });
+  }
+
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hashtag/core/api/domain/entities/best_tags.dart';
+import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/app_config_service.dart';
 import '../../../../core/widgets/custom_text_widget.dart';
 import '../../../../core/widgets/shadow_widget.dart';
 import '../components/tag_list_component.dart';
+import '../components/usage_tags_component.dart';
 
 class HomeTagDetailsPage extends StatelessWidget {
   final SocialMediaIcons category;
@@ -71,16 +72,14 @@ class HomeTagDetailsPage extends StatelessWidget {
         children: [
           Expanded(
             child: listTags.isNotEmpty
-                ? SingleChildScrollView(
-                  child: Container(
+                ? Container(
                       margin: const EdgeInsets.only(bottom: 50),
                       padding: const EdgeInsets.all(8.0),
-                      child: TagListComponent(
+                      child: UsageTagListComponent(
                         tagList: listTags,
                         categoryName: category.name,
                       ),
-                    ),
-                )
+                    )
                 : const Center(
                     child: CustomTextWidget(
                       text: AppStrings.defaultNotFoundErrorMessage,

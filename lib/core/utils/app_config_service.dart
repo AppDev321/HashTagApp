@@ -1,5 +1,5 @@
 
-import 'package:hashtag/core/api/domain/entities/best_tags.dart';
+import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
 
 import '../../gen/assets.gen.dart';
 import '../api/domain/entities/app_config_model.dart';

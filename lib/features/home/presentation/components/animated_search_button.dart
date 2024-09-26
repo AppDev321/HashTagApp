@@ -3,7 +3,8 @@ import 'package:hashtag/core/widgets/button_widget.dart';
 
 class AnimatedSearchButton extends StatefulWidget {
   final void Function()? onPressed;
-  const AnimatedSearchButton({super.key, this.onPressed});
+  final bool isLoading;
+  const AnimatedSearchButton({super.key, this.onPressed, required this.isLoading});
 
   @override
   _AnimatedSearchButtonState createState() => _AnimatedSearchButtonState();
@@ -47,6 +48,7 @@ class _AnimatedSearchButtonState extends State<AnimatedSearchButton>
         );
       },
       child: ButtonWidget(
+        isLoading: widget.isLoading,
         text: "Generate HashTag",
         buttonType: ButtonType.fill,
         color: Colors.red.withOpacity(0.8),

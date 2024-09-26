@@ -112,7 +112,8 @@ class ApiManager {
       logDebug('OnParseError: ${error.message}');
       return Future.error(error);
     } catch (exception, stackTrace) {
-      logDebug('OnParseException: $stackTrace');
+      logDebug('OnParseExceptionMessage: ${exception}');
+      logDebug('OnParseExceptionTrace: $stackTrace');
       return Future.error(GeneralError(
         message: exception is DioError
             ? exception.message

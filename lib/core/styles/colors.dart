@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class AppColors {
@@ -8,7 +10,7 @@ class AppColors {
   static const Color whiteColor = Colors.white;
   static const Color redAccent = Color(0xffB82713);
   static const Color whiteAccent = Color(0xffF2F2F2);
-  static const  Color themeTextColor =  Color(0xFF2E604B);
+  static const Color themeTextColor = Color(0xFF2E604B);
   static const Color secondaryTextColor = Color(0xFF667085);
 
   static final MaterialColor primarySwatch = MaterialColor(primaryColorHex, {
@@ -39,4 +41,51 @@ class AppColors {
       hexToColor('#F1FFEA'),
     ],
   );
+
+  static List<Color> appBarColorGradient = [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")];
+  static List<Color> topTagGradientColor = [
+    AppColors.hexToColor("#1769aa"),
+    AppColors.hexToColor("#2196f3"),
+  ];
+
+  static List<Color> newTagGradientColor = [
+    AppColors.hexToColor("#3f51b5"),
+    AppColors.hexToColor("#5C5EDD"),
+  ];
+
+  static List<List<Color>> randomColors = [
+    [
+      AppColors.hexToColor("#1769aa"),
+      AppColors.hexToColor("#2196f3"),
+    ],
+    [
+      AppColors.hexToColor("#aa2e25"),
+      AppColors.hexToColor("#f44336"),
+    ],
+    [
+      AppColors.hexToColor("#00695f"),
+      AppColors.hexToColor("#009688"),
+    ],
+    [
+      AppColors.hexToColor("#ab003c"),
+      AppColors.hexToColor("#f50057"),
+    ],
+    [
+      AppColors.hexToColor("#00897b"),
+      AppColors.hexToColor("#004d40"),
+    ],
+    [
+      AppColors.hexToColor("#1b5e20"),
+      AppColors.hexToColor("#43a047"),
+    ],
+    //appBarColorGradient,
+    newTagGradientColor,
+    topTagGradientColor
+  ];
+
+  static List<Color> getRandomGradientColor() {
+    final random = Random();
+    int listIndex = random.nextInt(randomColors.length);
+    return randomColors[listIndex];
+  }
 }

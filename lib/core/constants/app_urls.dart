@@ -7,4 +7,5 @@ class AppUrls {
   static const configUrl = '${baseUrl}configs';
   static const bestTagsUrl = '${baseUrl}getBestTags';
   static const newTagsUrl = '${baseUrl}getNewTags';
+  static const searchTagApi = '${baseUrl}getSearchTags/';
 }

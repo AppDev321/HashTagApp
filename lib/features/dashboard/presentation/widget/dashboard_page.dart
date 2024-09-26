@@ -12,7 +12,7 @@ class DashboardPage extends GetView<DashboardController> {
   DashboardPage({Key? key}) : super(key: key);
 
   final List<Widget> _pages = [
-     HomePage(),
+    HomePage(),
     MiscPage(),
     const SettingsPage(),
   ];
@@ -27,14 +27,14 @@ class DashboardPage extends GetView<DashboardController> {
       ),
       bottomNavigationBar: Obx(() {
         return ClipRRect(
-          borderRadius:  const BorderRadius.vertical(top: Radius.circular(10)),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
           child: Container(
             decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")],
-            begin: Alignment.bottomRight,
-            end: Alignment.topLeft,
-          ) ,
+              gradient: LinearGradient(
+                colors: [AppColors.hexToColor("#A8E6ce"), AppColors.hexToColor("#dcedc2")],
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+              ),
               /*boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
@@ -50,8 +50,7 @@ class DashboardPage extends GetView<DashboardController> {
               onTap: controller.onTabTapped,
               backgroundColor: Colors.transparent,
               selectedItemColor: Colors.blueAccent,
-              unselectedItemColor:Colors.black ,
-
+              unselectedItemColor: Colors.black,
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.tag),
