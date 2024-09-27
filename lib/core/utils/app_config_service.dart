@@ -17,8 +17,15 @@ class ConfigService {
   }
 
   AppConfig? get configData => _configData;
+  static Set<String> selectedTags = {};
+  //List<String> get selectedTags => _selectedTags.toList();
+
+
   List<CommonTags> bestTagsList = [];
   List<CommonTags> newTagsList = [];
+
+
+
 
   List<SocialMediaIcons> offlineTagsCategories = [
     SocialMediaIcons(name: 'Popular', alias: "mpth", image: Assets.categories.flame.path),

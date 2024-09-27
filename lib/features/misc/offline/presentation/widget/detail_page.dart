@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hashtag/core/utils/app_config_service.dart';
 import 'package:hashtag/core/widgets/custom_text_widget.dart';
+import 'package:hashtag/features/dashboard/presentation/components/hash_button.dart';
 
 import '../../../../../core/widgets/shadow_widget.dart';
 import '../../domain/entities/hashtag_entitiy.dart';
@@ -22,6 +23,7 @@ class DetailsPage extends StatelessWidget {
     double remainingHeight = totalHeight - statusBarHeight - appBarHeight;
 
     return Scaffold(
+      floatingActionButton: const HashButton(),
       body: SafeArea(
         bottom: false,
         child: Stack(

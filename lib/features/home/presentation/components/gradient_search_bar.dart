@@ -6,7 +6,9 @@ import '../../../../core/widgets/custom_text_field.dart';
 
 class GradientSearchBox extends StatelessWidget {
   final Function(String)? onChanged;
-  const GradientSearchBox({super.key, this.onChanged});
+  final FocusNode focusNode;
+
+  const GradientSearchBox({super.key, this.onChanged, required this.focusNode});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class GradientSearchBox extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: CustomTextField(
+          focusNode: focusNode,
           borderEnable: false,
           text: AppStrings.searchTag,
           fontWeight: FontWeight.normal,

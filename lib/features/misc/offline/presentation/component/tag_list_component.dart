@@ -4,7 +4,9 @@ import 'package:hashtag/core/utils/utils.dart';
 import 'package:hashtag/core/utils/widget_extensions.dart';
 import 'package:hashtag/features/misc/offline/presentation/component/custom_chip.dart';
 
+import '../../../../../core/utils/app_config_service.dart';
 import '../../../../../core/widgets/custom_text_widget.dart';
+import '../../../../../event_bus.dart';
 import '../../domain/entities/hashtag_entitiy.dart';
 
 class TagListComponent extends StatefulWidget {
@@ -17,7 +19,6 @@ class TagListComponent extends StatefulWidget {
 }
 
 class _TagListComponentState extends State<TagListComponent> {
-  final Set<String> _selectedTags = {};
 
   @override
   Widget build(BuildContext context) {
@@ -62,18 +63,20 @@ class _TagListComponentState extends State<TagListComponent> {
                   children: tagData.tags.split(" ")
                       .where((tag) => tag.length > 2)
                       .map((tag) {
-                    final isSelected = _selectedTags.contains(tag.trim());
+                    final isSelected = ConfigService.selectedTags.contains(tag.trim());
                     return RepaintBoundary( // Helps with performance
                       child: CustomChip(
                         label: tag.trim(),
-                        isSelected: _selectedTags.contains(tag.trim()),
+                        isSelected: isSelected,
                         onSelected: () {
                           setState(() {
-                            if (_selectedTags.contains(tag.trim())) {
-                              _selectedTags.remove(tag.trim());
+                            if (ConfigService.selectedTags.contains(tag.trim())) {
+                              ConfigService.selectedTags.remove(tag.trim());
                             } else {
-                              _selectedTags.add(tag.trim());
+                              ConfigService.selectedTags.add(tag.trim());
                             }
+                            eventBus.fire(HashButtonUpdate());
+
                           });
                         },
                       ),
@@ -88,5 +91,4 @@ class _TagListComponentState extends State<TagListComponent> {
     );
   }
 
-  List<String> get selectedTags => _selectedTags.toList();
 }

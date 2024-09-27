@@ -116,6 +116,12 @@ class AppStrings {
   static const String offline_hashtags = "Offline Tags";
   static const String header1= "Create effective hashtags to elevate your social media posts and boost engagement!";
   static const String homeText1= "Our Recommendations";
-  static const String searchTag= "Enter a tag word";
+  static const String searchTag= "Enter a word to generate a tags";
+  static const String topTags= "Top Tags";
+  static const String topTagsDesc= "Discover Our Top Tags";
+  static const String newTags= "New Tags";
+  static const String newTagsDesc= "See Our New upcoming Tags";
+
+
 
 }

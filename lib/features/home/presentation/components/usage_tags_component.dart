@@ -3,7 +3,9 @@ import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
 import 'package:hashtag/core/utils/widget_extensions.dart';
 import 'package:hashtag/features/misc/offline/presentation/component/custom_chip.dart';
 
+import '../../../../core/utils/app_config_service.dart';
 import '../../../../core/widgets/custom_text_widget.dart';
+import '../../../../event_bus.dart';
 import '../../../utils/common_utils.dart';
 
 class UsageTagListComponent extends StatefulWidget {
@@ -16,7 +18,6 @@ class UsageTagListComponent extends StatefulWidget {
 }
 
 class _UsageTagListComponentState extends State<UsageTagListComponent> {
-  final Set<String> _selectedTags = {};
 
   @override
   void initState() {
@@ -33,7 +34,7 @@ class _UsageTagListComponentState extends State<UsageTagListComponent> {
         itemBuilder: (context, index) {
           var data = widget.tagList[index];
           var tag = data.tag;
-          final isSelected = _selectedTags.contains(tag);
+          final isSelected = ConfigService.selectedTags.contains(tag);
           return Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Row(
@@ -47,20 +48,19 @@ class _UsageTagListComponentState extends State<UsageTagListComponent> {
                     isSelected: isSelected,
                     onSelected: () {
                       setState(() {
-                        if (_selectedTags.contains(tag.trim())) {
-                          _selectedTags.remove(tag.trim());
+                        if (ConfigService.selectedTags.contains(tag.trim())) {
+                          ConfigService.selectedTags.remove(tag.trim());
                         } else {
-                          _selectedTags.add(tag.trim());
+                          ConfigService.selectedTags.add(tag.trim());
                         }
+                        eventBus.fire(HashButtonUpdate());
+
                       });
                     },
                   )
 
                 ]),
                 CustomTextWidget(text: formatNumber(data.usage),size: 12,),
-
-
-
               ],
             ),
           );
@@ -69,5 +69,4 @@ class _UsageTagListComponentState extends State<UsageTagListComponent> {
 
   }
 
-  List<String> get selectedTags => _selectedTags.toList();
 }

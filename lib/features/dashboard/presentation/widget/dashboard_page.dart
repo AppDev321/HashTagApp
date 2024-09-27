@@ -50,7 +50,7 @@ class DashboardPage extends GetView<DashboardController> {
               onTap: controller.onTabTapped,
               backgroundColor: Colors.transparent,
               selectedItemColor: Colors.white,
-              unselectedItemColor: Colors.black,
+              unselectedItemColor: Colors.grey,
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.tag),

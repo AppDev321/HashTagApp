@@ -11,6 +11,7 @@ import '../../../../core/utils/app_config_service.dart';
 import '../../../../core/utils/utils.dart';
 import '../../../../core/utils/widget_extensions.dart';
 import '../../../../core/widgets/custom_text_widget.dart';
+import '../../../../event_bus.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../routes/app_pages.dart';
 import '../../../utils/common_utils.dart';
@@ -27,7 +28,6 @@ class TagListComponent extends StatefulWidget {
 }
 
 class _TagListComponentState extends State<TagListComponent> {
-  final Set<String> _selectedTags = {};
 
   @override
   Widget build(BuildContext context) {
@@ -57,17 +57,20 @@ class _TagListComponentState extends State<TagListComponent> {
                 children: widget.tagList.map((data) {
               var tag = data.tag;
 
-              final isSelected = _selectedTags.contains(tag);
+              final isSelected = ConfigService.selectedTags.contains(tag);
               return CustomChip(
                 label: tag,
                 isSelected: isSelected,
                 onSelected: () {
                   setState(() {
-                    if (_selectedTags.contains(tag.trim())) {
-                      _selectedTags.remove(tag.trim());
+
+                    if (ConfigService.selectedTags.contains(tag.trim())) {
+                      ConfigService.selectedTags.remove(tag.trim());
                     } else {
-                      _selectedTags.add(tag.trim());
+                      ConfigService.selectedTags.add(tag.trim());
                     }
+                    eventBus.fire(HashButtonUpdate());
+
                   });
                 },
               );
@@ -129,5 +132,4 @@ class _TagListComponentState extends State<TagListComponent> {
     );
   }
 
-  List<String> get selectedTags => _selectedTags.toList();
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
+import 'package:hashtag/features/dashboard/presentation/components/hash_button.dart';
 import 'package:hashtag/gen/fonts.gen.dart';
 
 import '../../../../core/constants/app_strings.dart';
@@ -24,6 +25,7 @@ class HomeTagDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: const HashButton(),
       appBar: AppBar(
         elevation: 0,
         scrolledUnderElevation: 0,
@@ -75,7 +77,7 @@ class HomeTagDetailsPage extends StatelessWidget {
           Expanded(
             child: listTags.isNotEmpty
                 ? Container(
-                      margin: const EdgeInsets.only(bottom: 50),
+                      margin: const EdgeInsets.only(bottom: 5),
                       padding: const EdgeInsets.all(8.0),
                       child: UsageTagListComponent(
                         tagList: listTags
