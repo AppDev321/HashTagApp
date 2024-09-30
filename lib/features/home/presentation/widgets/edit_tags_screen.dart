@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hashtag/core/utils/app_config_service.dart';
-import 'package:hashtag/core/utils/utils.dart';
 import 'package:hashtag/core/widgets/custom_text_field.dart';
 import 'package:hashtag/features/home/presentation/get/home_controller.dart';
 
@@ -9,6 +7,7 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/styles/colors.dart';
 import '../../../../core/widgets/custom_text_widget.dart';
 import '../../../../gen/fonts.gen.dart';
+import '../components/gradient_search_bar.dart';
 
 class EditTagsScreen extends StatefulWidget {
   const EditTagsScreen({super.key});
@@ -81,11 +80,36 @@ class _EditTagsScreenState extends State<EditTagsScreen> with TickerProviderStat
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextFormField(
-                    hintText: 'Type hashtags to add ...',
-                    onChanged: controller.handleEditTagInput,
-                    controller: controller.tagEditController,
+                  Container(
+                    decoration: BoxDecoration(
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(color: AppColors.appBarColorGradient[0].withOpacity(0.6), offset: const Offset(1.1, 4.0), blurRadius: 8.0),
+                      ],
+                      gradient: LinearGradient(
+                        colors: AppColors.appBarColorGradient,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: const BorderRadius.all(Radius.circular(40)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child:  CustomTextFormField(
+                        onChanged: controller.handleEditTagInput,
+                        controller: controller.tagEditController,
+                        inputDecoration: InputDecoration(
+                          filled: true,
+                          fillColor: Get.isDarkMode ?Colors.black:Colors.white,
+                          hintStyle: Theme.of(context).textTheme.bodyLarge,
+                          hintText: 'Type hashtags to add ...',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
+
                   const SizedBox(height: 10),
                   Expanded(
                     child: ListView(
