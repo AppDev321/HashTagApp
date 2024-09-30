@@ -5,6 +5,7 @@ import 'package:hashtag/core/api/domain/entities/search_api_response.dart';
 import 'package:hashtag/features/dashboard/presentation/binding/dashboard_bindings.dart';
 import 'package:hashtag/features/dashboard/presentation/widget/dashboard_page.dart';
 import 'package:hashtag/features/home/presentation/components/tag_list_component.dart';
+import 'package:hashtag/features/home/presentation/widgets/edit_tags_screen.dart';
 import 'package:hashtag/features/home/presentation/widgets/home_tag_detail_page.dart';
 import 'package:hashtag/features/home/presentation/widgets/search_tag_detail_page.dart';
 import 'package:hashtag/features/misc/captions/presentation/bindings/caption_bindings.dart';
@@ -47,6 +48,7 @@ class AppPages {
   static const ON_OFFLINE_HASHTAG_DETAIL = Routes.ON_OFFLINE_HASHTAG_DETAIL;
   static const ON_HOME_TAG_DETAIL = Routes.ON_HOME_TAG_DETAIL;
   static const ON_HOME_SEARCH_TAG_DETAIL = Routes.ON_HOME_SEARCH_TAG_DETAIL;
+  static const ON_EDIT_TAG = Routes.ON_EDIT_TAG;
 
 
 
@@ -58,6 +60,8 @@ class AppPages {
     GetPage(name: _Paths.ON_FONT_STYLING, page: () => const FontStyleScreen(), binding: FontStyleBindings(), transition: Transition.rightToLeft),
     GetPage(name: _Paths.ON_CAPTION, page: () => CaptionScreen(), binding: CaptionBindings(), transition: Transition.rightToLeft),
     GetPage(name: _Paths.ON_OFFLINE_HASHTAG, page: () => const OfflineHashTagScreen(), binding: OfflineHashtagsBindings(), transition: Transition.rightToLeft),
+    GetPage(name: _Paths.ON_EDIT_TAG, page: () => const EditTagsScreen(),  transition: Transition.rightToLeft),
+
     GetPage(
         name: _Paths.ON_OFFLINE_HASHTAG_DETAIL,
         page: () {

@@ -7,7 +7,6 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/app_config_service.dart';
 import '../../../../core/widgets/custom_text_widget.dart';
 import '../../../../core/widgets/shadow_widget.dart';
-import '../components/tag_list_component.dart';
 import '../components/usage_tags_component.dart';
 
 class HomeTagDetailsPage extends StatelessWidget {

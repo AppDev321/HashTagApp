@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hashtag/core/utils/utils.dart';
@@ -19,6 +21,25 @@ class TagListComponent extends StatefulWidget {
 }
 
 class _TagListComponentState extends State<TagListComponent> {
+
+
+  late StreamSubscription<HashButtonUpdate> _subscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _subscription = eventBus.on<HashButtonUpdate>().listen((event) {
+      if (mounted) {
+        setState(() {});
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _subscription.cancel(); // Cancel the subscription
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

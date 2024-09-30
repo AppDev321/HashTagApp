@@ -121,6 +121,7 @@ class AppStrings {
   static const String topTagsDesc= "Discover Our Top Tags";
   static const String newTags= "New Tags";
   static const String newTagsDesc= "See Our New upcoming Tags";
+  static const String editTags= "Edit Your Tags";
 
 
 

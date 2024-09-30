@@ -362,10 +362,11 @@ void copyToClipboard(BuildContext context, String textToCopy) {
     if (await Vibration.hasVibrator() ?? false) {
       Vibration.vibrate(duration: 100); // Vibrate for 100 milliseconds
     }
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Copied to clipboard!')),
-    );
-
+    if(context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Copied to clipboard!')),
+      );
+    }
   });
 }
 

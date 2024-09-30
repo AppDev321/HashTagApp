@@ -12,7 +12,7 @@ abstract class Routes {
   static const ON_OFFLINE_HASHTAG_DETAIL= _Paths.ON_OFFLINE_HASHTAG_DETAIL;
   static const ON_HOME_TAG_DETAIL = _Paths.ON_HOME_TAG_DETAIL;
   static const ON_HOME_SEARCH_TAG_DETAIL = _Paths.ON_HOME_SEARCH_TAG_DETAIL;
-
+  static const ON_EDIT_TAG = _Paths.ON_EDIT_TAG;
 }
 
 abstract class _Paths {
@@ -27,4 +27,6 @@ abstract class _Paths {
   static const ON_OFFLINE_HASHTAG_DETAIL ="/offline_hash_tag_detail";
   static const ON_HOME_TAG_DETAIL = "/home_tag_detail";
   static const ON_HOME_SEARCH_TAG_DETAIL = "/home_search_tag_detail";
+  static const ON_EDIT_TAG = "/edit_tag";
+
 }

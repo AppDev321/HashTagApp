@@ -18,7 +18,7 @@ class ConfigService {
 
   AppConfig? get configData => _configData;
   static Set<String> selectedTags = {};
-  //List<String> get selectedTags => _selectedTags.toList();
+  static List<String> get selectedTagsList => selectedTags.toList();
 
 
   List<CommonTags> bestTagsList = [];

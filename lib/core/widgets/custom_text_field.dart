@@ -13,7 +13,7 @@ class CustomPasswordField extends StatefulWidget {
   final String? initialValue;
   final void Function(String)? onChanged; // New onChanged property
   final String? Function(String?)? validator;
-
+  final TextEditingController? controller;
   const CustomPasswordField({
     Key? key,
     this.validator,
@@ -21,6 +21,7 @@ class CustomPasswordField extends StatefulWidget {
     this.hintText,
     this.labelText,
     this.onChanged,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -49,6 +50,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
       labelText: widget.labelText,
       obscureText: _obscureText,
       validator: widget.validator,
+      controller: widget.controller,
     );
   }
 }
@@ -62,7 +64,8 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final void Function(String)? onChanged; // New onChanged property
   final String? initialValue;
-
+  final TextEditingController? controller;
+  final InputDecoration? inputDecoration;
   const CustomTextFormField({super.key,
     this.labelText,
     this.hintText,
@@ -71,16 +74,19 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText,
     this.initialValue,
     this.maxLines,
-    this.onChanged, // Pass the onChanged through the constructor
+    this.onChanged,
+    this.controller,
+    this.inputDecoration// Pass the onChanged through the constructor
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       maxLines: obscureText == true ? 1 : maxLines,
       initialValue: initialValue,
       obscureText: obscureText ?? false,
-      decoration: InputDecoration(
+      decoration: inputDecoration ?? InputDecoration(
         labelText: labelText,
         // floatingLabelBehavior: FloatingLabelBehavior.always,
         hintStyle: Theme.of(context).textTheme.bodyLarge,

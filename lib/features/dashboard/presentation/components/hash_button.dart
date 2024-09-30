@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hashtag/core/utils/utils.dart';
 import 'package:hashtag/core/widgets/custom_text_widget.dart';
 import 'package:hashtag/features/home/presentation/components/avatar_glow.dart';
@@ -8,6 +9,7 @@ import 'package:hashtag/features/home/presentation/components/avatar_glow.dart';
 import '../../../../core/styles/colors.dart';
 import '../../../../core/utils/app_config_service.dart';
 import '../../../../event_bus.dart';
+import '../../../../routes/app_pages.dart';
 
 class HashButton extends StatefulWidget {
   const HashButton({super.key});
@@ -48,6 +50,8 @@ class _HashButtonState extends State<HashButton> {
               shape: const CircleBorder(),
               onPressed: () {
                 if (tagCount > 0) {
+                  Get.toNamed(AppPages.ON_EDIT_TAG);
+
                 } else {
                   showSnackBar(context, "No tag selected");
                 }

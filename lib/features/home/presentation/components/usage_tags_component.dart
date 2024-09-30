@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hashtag/core/api/domain/entities/common_tags_data_model.dart';
 import 'package:hashtag/core/utils/widget_extensions.dart';
@@ -18,13 +20,25 @@ class UsageTagListComponent extends StatefulWidget {
 }
 
 class _UsageTagListComponentState extends State<UsageTagListComponent> {
+  late StreamSubscription<HashButtonUpdate> _subscription;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     widget.tagList.sort((a, b) => b.usage.compareTo(a.usage));
+    _subscription = eventBus.on<HashButtonUpdate>().listen((event) {
+      if (mounted) {
+        setState(() {});
+      }
+    });
 
+  }
+
+  @override
+  void dispose() {
+    _subscription.cancel(); // Cancel the subscription
+    super.dispose();
   }
 
   @override
